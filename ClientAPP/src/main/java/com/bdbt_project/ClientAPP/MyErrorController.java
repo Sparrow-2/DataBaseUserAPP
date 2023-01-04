@@ -30,6 +30,7 @@ public class MyErrorController implements ErrorController {
                 return "errors/other";
             }
         }
+
         return "errors/other_related_to_db";
     }
 }
