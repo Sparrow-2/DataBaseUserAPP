@@ -19,9 +19,7 @@ public class EmployeesDAO {
     @Autowired
     private JdbcTemplate jdbcTemplate;
 
-    public EmployeesDAO(JdbcTemplate jdbcTemplate) {
 
-    }
 
     public List <Employee> list(){
       String sql = "SELECT * FROM PRACOWNICY";
@@ -36,7 +34,7 @@ public class EmployeesDAO {
         return null;
     }
 
-    public WorkersDAO(JdbcTemplate jdbcTemplate) {
+    public EmployeesDAO(JdbcTemplate jdbcTemplate) {
         super();
         this.jdbcTemplate = jdbcTemplate;
     }
