@@ -1,5 +1,5 @@
 package com.bdbt_project.ClientAPP;
-
+/*
 
 public class Employee {
     private Integer id;
@@ -135,4 +135,4 @@ private String pesel;
     }
 }
 
-
+*/

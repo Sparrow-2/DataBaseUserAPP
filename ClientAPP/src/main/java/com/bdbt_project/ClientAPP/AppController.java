@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import java.lang.reflect.Array;
 import java.util.List;
 
-@Configuration
+//@Configuration
 public class AppController implements WebMvcConfigurer {
 
  /*   @Autowired
