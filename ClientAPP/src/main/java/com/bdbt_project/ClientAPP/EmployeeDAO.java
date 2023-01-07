@@ -8,14 +8,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 
 
 import java.util.List;
 
 @Repository
-public class EmployeesDAO {
+public class EmployeeDAO {
     @Autowired
     private JdbcTemplate jdbcTemplate;
 
@@ -34,7 +33,7 @@ public class EmployeesDAO {
         return null;
     }
 
-    public EmployeesDAO(JdbcTemplate jdbcTemplate) {
+    public EmployeeDAO(JdbcTemplate jdbcTemplate) {
         super();
         this.jdbcTemplate = jdbcTemplate;
     }

@@ -11,7 +11,7 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class EmployeeDAOTest {
-    private EmployeesDAO dao;
+    private EmployeeDAO dao;
     @BeforeEach
     void setUp() throws Exception{
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
@@ -20,7 +20,7 @@ public class EmployeeDAOTest {
         dataSource.setPassword("BDBTGRC13");
         dataSource.setDriverClassName("oracle.jdbc.OracleDriver");
 
-        dao = new EmployeesDAO(new JdbcTemplate(dataSource));
+        dao = new EmployeeDAO(new JdbcTemplate(dataSource));
     }
     @Test
     void testList(){
