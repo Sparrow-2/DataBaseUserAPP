@@ -3,7 +3,7 @@ package com.bdbt_project.ClientAPP;
 
 
 
-/*
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -18,16 +18,16 @@ import java.util.List;
 public class WorkersDAO {
     @Autowired
     private JdbcTemplate jdbcTemplate;
-    public List <Workers> list(){
+    public List <Employee> list(){
       String sql = "SELECT * FROM PRACOWNICY";
-        List<Workers> listWorkers = jdbcTemplate.query(sql, BeanPropertyRowMapper.newInstance(Workers.class));
+        List<Employee> listWorkers = jdbcTemplate.query(sql, BeanPropertyRowMapper.newInstance(Employee.class));
 
     return listWorkers;
     }
-    public void save(Workers workers){
+    public void save(Employee workers){
 
     }
-    public Workers get(int id){
+    public Employee get(int id){
         return null;
     }
 
@@ -36,7 +36,7 @@ public class WorkersDAO {
         this.jdbcTemplate = jdbcTemplate;
     }
 
-    public void update(Workers workers){
+    public void update(Employee workers){
 
     }
     public void delete(int id){
