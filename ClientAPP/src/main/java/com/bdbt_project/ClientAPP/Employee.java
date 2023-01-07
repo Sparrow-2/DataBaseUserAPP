@@ -1,12 +1,8 @@
 package com.bdbt_project.ClientAPP;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 
-
-
-public class Workers {
-private int id;
+public class Employee {
+    private Integer id;
 private String birth_date;
 private String date_of_valid_test;
 private String date_of_last_test;
@@ -17,45 +13,12 @@ private String name;
 private String lastname;
 private String phone_number;
 private String pesel;
-@Autowired
-public Workers(int id, String birth_date, String date_of_valid_test, String date_of_last_test, String date_of_employment, String date_of_examption, String email, String name, String lastname, String phone_number, String pesel, char sex) {
-        this.id = id;
-        this.birth_date = birth_date;
-        this.date_of_valid_test = date_of_valid_test;
-        this.date_of_last_test = date_of_last_test;
-        this.date_of_employment = date_of_employment;
-        this.date_of_examption = date_of_examption;
-        this.email = email;
-        this.name = name;
-        this.lastname = lastname;
-        this.phone_number = phone_number;
-        this.pesel = pesel;
-        this.sex = sex;
-    }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    @Override
-    public String toString() {
-        return "Workers{" +
-                "id=" + id +
-                ", birth_date='" + birth_date + '\'' +
-                ", date_of_valid_test='" + date_of_valid_test + '\'' +
-                ", date_of_last_test='" + date_of_last_test + '\'' +
-                ", date_of_employment='" + date_of_employment + '\'' +
-                ", date_of_examption='" + date_of_examption + '\'' +
-                ", email='" + email + '\'' +
-                ", name='" + name + '\'' +
-                ", lastname='" + lastname + '\'' +
-                ", phone_number='" + phone_number + '\'' +
-                ", pesel='" + pesel + '\'' +
-                ", sex=" + sex +
-                '}';
-    }
-
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -139,16 +102,37 @@ public Workers(int id, String birth_date, String date_of_valid_test, String date
         this.pesel = pesel;
     }
 
-    public char getSex() {
-        return sex;
+    public Employee(Integer id, String birth_date, String date_of_valid_test, String date_of_last_test, String date_of_employment, String date_of_examption, String email, String name, String lastname, String phone_number, String pesel) {
+        super();
+        this.id = id;
+        this.birth_date = birth_date;
+        this.date_of_valid_test = date_of_valid_test;
+        this.date_of_last_test = date_of_last_test;
+        this.date_of_employment = date_of_employment;
+        this.date_of_examption = date_of_examption;
+        this.email = email;
+        this.name = name;
+        this.lastname = lastname;
+        this.phone_number = phone_number;
+        this.pesel = pesel;
     }
 
-    public void setSex(char sex) {
-        this.sex = sex;
+    @Override
+    public String toString() {
+        return "Workers{" +
+                "id=" + id +
+                ", birth_date='" + birth_date + '\'' +
+                ", date_of_valid_test='" + date_of_valid_test + '\'' +
+                ", date_of_last_test='" + date_of_last_test + '\'' +
+                ", date_of_employment='" + date_of_employment + '\'' +
+                ", date_of_examption='" + date_of_examption + '\'' +
+                ", email='" + email + '\'' +
+                ", name='" + name + '\'' +
+                ", lastname='" + lastname + '\'' +
+                ", phone_number='" + phone_number + '\'' +
+                ", pesel='" + pesel + '\'' +
+                '}';
     }
-
-    private char sex;
-
 }
 
 

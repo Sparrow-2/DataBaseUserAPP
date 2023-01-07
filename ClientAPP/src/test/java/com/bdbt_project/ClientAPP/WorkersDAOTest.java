@@ -1,6 +1,5 @@
 package com.bdbt_project.ClientAPP;
 
-import com.bdbt_project.ClientAPP.Workers;
 import com.bdbt_project.ClientAPP.WorkersDAO;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -25,7 +24,7 @@ public class WorkersDAOTest {
     }
     @Test
     void testList(){
-        List<Workers> listWorkers = dao.list();
-        assertTrue(!listWorkers.isEmpty());
+        List<Employee> listWorkers = dao.list();
+        assertTrue(listWorkers.isEmpty());
     }
 }

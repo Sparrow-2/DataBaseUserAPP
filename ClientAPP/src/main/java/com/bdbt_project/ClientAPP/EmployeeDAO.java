@@ -3,7 +3,7 @@ package com.bdbt_project.ClientAPP;
 
 
 
-
+/*
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -19,7 +19,7 @@ public class WorkersDAO {
     @Autowired
     private JdbcTemplate jdbcTemplate;
     public List <Workers> list(){
-      String sql = "select * from PRACOWNICY";
+      String sql = "SELECT * FROM PRACOWNICY";
         List<Workers> listWorkers = jdbcTemplate.query(sql, BeanPropertyRowMapper.newInstance(Workers.class));
 
     return listWorkers;
@@ -46,3 +46,4 @@ public class WorkersDAO {
 
 
 }
+*/

@@ -15,7 +15,7 @@ import java.util.List;
 @Configuration
 public class AppController implements WebMvcConfigurer {
 
-    @Autowired
+ /*   @Autowired
     private WorkersDAO dao;
     @RequestMapping("/")
     public String viewHomepage(Model model){
@@ -24,7 +24,7 @@ public class AppController implements WebMvcConfigurer {
 
         return "index";
     }
-
+*/
 
 
     public void addViewControllers(ViewControllerRegistry registry) {
