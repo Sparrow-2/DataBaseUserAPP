@@ -15,9 +15,14 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public class WorkersDAO {
+public class EmployeesDAO {
     @Autowired
     private JdbcTemplate jdbcTemplate;
+
+    public EmployeesDAO(JdbcTemplate jdbcTemplate) {
+
+    }
+
     public List <Employee> list(){
       String sql = "SELECT * FROM PRACOWNICY";
         List<Employee> listWorkers = jdbcTemplate.query(sql, BeanPropertyRowMapper.newInstance(Employee.class));
@@ -46,4 +51,3 @@ public class WorkersDAO {
 
 
 }
-*/
