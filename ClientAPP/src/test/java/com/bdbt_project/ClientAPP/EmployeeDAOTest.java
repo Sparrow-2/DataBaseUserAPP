@@ -10,7 +10,7 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-public class WorkersDAOTest {
+public class EmployeeDAOTest {
     private WorkersDAO dao;
     @BeforeEach
     void setUp() throws Exception{
