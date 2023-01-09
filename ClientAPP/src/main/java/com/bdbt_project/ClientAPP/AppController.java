@@ -15,16 +15,16 @@ import java.util.List;
 //@Configuration
 public class AppController implements WebMvcConfigurer {
 
- /*   @Autowired
-    private WorkersDAO dao;
-    @RequestMapping("/")
+  @Autowired
+    private StopDAO dao;
+    @RequestMapping(value = {"/", "/index"})
     public String viewHomepage(Model model){
-        List <Workers> listWorkers = dao.list();
-        model.addAttribute("list_Workers",listWorkers);
+        List <Stop> listStops = dao.list();
+        model.addAttribute("list_Stops",listStops);
 
         return "index";
     }
-*/
+
 
 
     public void addViewControllers(ViewControllerRegistry registry) {
