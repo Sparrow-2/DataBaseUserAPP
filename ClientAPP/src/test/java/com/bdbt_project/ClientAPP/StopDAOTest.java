@@ -36,6 +36,23 @@ public class StopDAOTest {
         Stop stop = dao.get(nr_przystanku);
         assertNotNull(stop);
     }
+    @Test
+    void testGetatr(){
+        int nr_przystanku = 1;
+        String nazwa_przystanku = "KABATY01";
+        char rodzaj_przystanku = 'A';
+        Stop stop = dao.get_atr(nazwa_przystanku);
+        assertNotNull(stop);
+    }
+    @Test
+    void testSave(){
+        int nr_przystanku = 1;
+        String nazwa_przystanku = "KABATY01";
+        char rodzaj_przystanku = 'A';
+        Stop stop = new Stop(10,"MŁYNÓW01",'A',true,true,true,1);
+        dao.save(stop);
+    }
+
 
 
 
