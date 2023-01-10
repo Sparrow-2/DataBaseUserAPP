@@ -5,7 +5,7 @@ import lombok.Data;
 
 public class Vehicle {
     private int  nr_modelu;
-   private  String nazwa_modelu;
+    private  String nazwa_modelu;
 
     public int getNr_modelu() {
         return nr_modelu;

@@ -1,3 +1,4 @@
+/*
 package com.bdbt_project.ClientAPP;
 
 import com.bdbt_project.ClientAPP.WorkersDAO;
@@ -9,7 +10,7 @@ import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
-/*
+
 public class EmployeeDAOTest {
     private EmployeeDAO dao;
     @BeforeEach

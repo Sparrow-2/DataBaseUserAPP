@@ -1,8 +1,8 @@
 package com.bdbt_project.ClientAPP;
 
 public class Managment {
-public int nr_zarzadu;
-public String nazwa_zarzadu;
+    public int nr_zarzadu;
+    public String nazwa_zarzadu;
 
     public int getNr_zarzadu() {
         return nr_zarzadu;
