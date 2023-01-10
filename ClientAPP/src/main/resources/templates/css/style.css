@@ -91,7 +91,7 @@ section {
 
 /* NAVBAR */
 .navbar {
-	background: linear-gradient(#1B1F34,rgba(27, 31, 52, 0.0)));
+	background: linear-gradient(#1B1F34,rgba(27, 31, 52, 0.0));
 }
 
 .navbar .navbar-nav .nav-link.active {
@@ -122,7 +122,7 @@ section {
 
 /* BTN */
 .btn {
-	padding: 16px 36 px;
+	padding: 16px 36px;
 	font-family: "Dela Gothic One", 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 	: all 0.4s ease;
 }
