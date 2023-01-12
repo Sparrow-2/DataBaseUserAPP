@@ -6,6 +6,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 
 
+import java.sql.Timestamp;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -30,9 +31,23 @@ public class KlientDAOTest {
         assertFalse(listKlient.isEmpty());
     }
     @Test
-    void testSave() {
-        fail("Not yet implemented");
+    void testSave(){Klient klient = new Klient();
+            klient.setImie_klienta("Zosia");
+            klient.setNazwisko_klienta("Zubrzycka");
+            klient.setEmail_klienta("zoszub1@wp.pl");
+            klient.setNr_klienta(4);
+            klient.setNr_adresu(12);
+            klient.setNr_poczty(12);
+            klient.setNr_zarzadu(1);
+            klient.setNr_telefonu_klienta("+48600600600");
+            klient.setPESEL_klienta("00000000000");
+            klient.setPlec_klienta("K");
+            klient.setData_urodzenia_klienta(Timestamp.valueOf("2003-03-13 06:25:00"));
+            dao.save(klient);
+
+
     }
+
     @Test
     void testGet() {
         fail("Not yet implemented");

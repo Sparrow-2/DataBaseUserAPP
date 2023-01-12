@@ -36,7 +36,6 @@ public class KlientDAO {
         insertActor.execute(param);
     }
 
-    }
 
     public Klient get(int Nr_klienta) {
         return null;
