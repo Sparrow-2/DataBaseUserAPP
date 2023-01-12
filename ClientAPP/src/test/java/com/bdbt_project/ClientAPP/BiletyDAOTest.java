@@ -6,6 +6,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 
 
+import java.sql.Timestamp;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -32,20 +33,41 @@ public class BiletyDAOTest {
     }
     @Test
     void testSave() {
-        fail("Not yet implemented");
+        Bilety bilety = new Bilety();
+        bilety.setNr_biletu(10);
+        bilety.setCena((float) 3.8);
+        bilety.setNr_zarzadu(1);
+        bilety.setCzas_skasowania(Timestamp.valueOf("2023-01-03 13:00:00"));
+        bilety.setCzy_ulgowy(true);
+        bilety.setKoniec_waznosci(Timestamp.valueOf("2023-01-04 13:00:00"));
+        bilety.setRodzaj_biletu("DOBOWY");
+        dao.save(bilety);
+
     }
     @Test
     void testGet() {
-        fail("Not yet implemented");
+        int nr_biletu = 1;
+
+        Bilety bilety = dao.get(nr_biletu);
+        assertNotNull(bilety);
     }
 
     @Test
     void testUpdate() {
-        fail("Not yet implemented");
+        Bilety bilety = new Bilety();
+        bilety.setNr_biletu(1);
+        bilety.setCena((float) 3.8);
+        bilety.setNr_zarzadu(1);
+        bilety.setCzas_skasowania(Timestamp.valueOf("2023-01-03 13:00:00"));
+        bilety.setCzy_ulgowy(true);
+        bilety.setKoniec_waznosci(Timestamp.valueOf("2023-01-04 13:00:00"));
+        bilety.setRodzaj_biletu("DOBOWY");
+        dao.save(bilety);
     }
 
     @Test
     void testDelete() {
-        fail("Not yet implemented");
+
+        dao.delete(1);
     }
 }

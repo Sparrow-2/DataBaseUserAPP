@@ -3,6 +3,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.namedparam.BeanPropertySqlParameterSource;
+import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
+import org.springframework.jdbc.core.simple.SimpleJdbcInsert;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -28,19 +30,37 @@ public class BiletyDAO {
     }
 
     public void save(Bilety bilety) {
+        SimpleJdbcInsert insertActor = new SimpleJdbcInsert(jdbcTemplate);
+        insertActor.withTableName("BILETY").usingColumns("NR_BILETU", "RODZAJ_BILETU","CZAS_SKASOWANIA","KONIEC_WAZNOSCI",
+                "CZY_ULGOWY", "CENA","NR_ZARZADU","NR_KLIENTA");
+
+
+        BeanPropertySqlParameterSource param = new BeanPropertySqlParameterSource(bilety);
+        insertActor.execute(param);
 
     }
 
     public Bilety get(int Nr_biletu) {
-        return null;
+        Object[] args = {Nr_biletu};
+        String sql = "SELECT * FROM BILETY WHERE NR_BILETU  = " + "'"+args[0].toString()+"'";
+
+        return jdbcTemplate.queryForObject(sql, BeanPropertyRowMapper.newInstance(Bilety.class));
+
     }
 
     public void update(Bilety bilety) {
+        String sql = "UPDATE BILETY SET MIASTO=:Miasto, ULICA=:Ulica,NR_DOMU=:Nr_domu, NR_LOKALU=:Nr_lokalu, NR_POCZTY =:Nr_poczty WHERE NR_ADRESU=:Nr_adresu";
+        BeanPropertySqlParameterSource param = new BeanPropertySqlParameterSource(bilety);
+
+        NamedParameterJdbcTemplate template = new NamedParameterJdbcTemplate(jdbcTemplate);
+
+        template.update(sql, param);
 
     }
 
     public void delete(int Nr_biletu) {
-
+        String sql = "DELETE FROM BILETY WHERE NR_BILETU = ?";
+        jdbcTemplate.update(sql,Nr_biletu);
     }
 
 }

@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.namedparam.BeanPropertySqlParameterSource;
+import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.jdbc.core.simple.SimpleJdbcInsert;
 import org.springframework.stereotype.Repository;
 
@@ -24,7 +25,7 @@ public class StopDAO {
 
         return jdbcTemplate.query(sql, BeanPropertyRowMapper.newInstance(Stop.class));
     }
-    public void save(Stop stop) { // jak to nie dziala to moze dumb version typu insert jako string za działa ale nie mam siły dzisiaj na to...
+    public void save(Stop stop) {
 
         SimpleJdbcInsert insertActor = new SimpleJdbcInsert(jdbcTemplate);
         insertActor.withTableName("PRZYSTANKI").usingColumns("NR_PRZYSTANKU", "NAZWA_PRZYSTANKU","RODZAJ_PRZYSTANKU","CZY_BILETOMAT",
@@ -50,6 +51,25 @@ public class StopDAO {
 
 
     }
+    public void update(Stop stop) {
+
+        String sql = "UPDATE PRZYSTANKI SET NAZWA_PRZYSTANKU=:Nazwa_przystanku, RODZAJ_PRZYSTANKU=:Rodzaj_przystanku, CZY_BILETOMAT=:Czy_biletomat,CZY_EKRAN=:Czy_ekran, CZY_WIATA=:Czy_wiata, NR_ZARZADU=:Nr_zarzadu WHERE NR_PRZYSTANKU=:Nr_przystanku";
+        BeanPropertySqlParameterSource param = new BeanPropertySqlParameterSource(stop);
+
+        NamedParameterJdbcTemplate template = new NamedParameterJdbcTemplate(jdbcTemplate);
+
+        template.update(sql, param);
+
+    }
+
+    public void delete(int Nr_przystanku) {
+        // trzeba pomyslec jak to zrobić
+        String sql = "DELETE FROM PRZYSTANKI WHERE NR_PRZYSTANKU = ?";
+        jdbcTemplate.update(sql,Nr_przystanku);
+
+    }
+
+
 
 
 

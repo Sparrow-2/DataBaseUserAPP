@@ -30,20 +30,37 @@ public class TrasyDAOTest {
     }
     @Test
     void testSave() {
-        fail("Not yet implemented");
+        Trasy trasy = new Trasy();
+        trasy.setNr_trasy(6);
+        trasy.setDlugosc(3);
+        trasy.setPrzystanek_koncowy("MŁOCINY");
+        trasy.setPrzystanek_poczatkowy("STARE BIELANY");
+        dao.save(trasy);
+
     }
     @Test
     void testGet() {
-        fail("Not yet implemented");
+
+        int nr_trasy = 1;
+
+        Trasy trasy = dao.get(nr_trasy);
+        assertNotNull(trasy);
     }
 
     @Test
     void testUpdate() {
-        fail("Not yet implemented");
+        Trasy trasy = new Trasy();
+        trasy.setNr_trasy(1);
+        trasy.setDlugosc(3);
+        trasy.setPrzystanek_koncowy("MŁOCINY");
+        trasy.setPrzystanek_poczatkowy("STARE BIELANY");
+        dao.save(trasy);
+
     }
 
     @Test
     void testDelete() {
-        fail("Not yet implemented");
+
+        dao.delete(1);
     }
 }

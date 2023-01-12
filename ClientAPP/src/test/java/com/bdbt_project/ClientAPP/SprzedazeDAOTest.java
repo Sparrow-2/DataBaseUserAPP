@@ -5,6 +5,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 
 
+import java.sql.Timestamp;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -29,20 +30,30 @@ public class SprzedazeDAOTest {
     }
     @Test
     void testSave() {
-        fail("Not yet implemented");
+        Sprzedaze sprzedaze = new Sprzedaze();
+        sprzedaze.setNr_biletu(3);
+        sprzedaze.setData_sprzedazy(Timestamp.valueOf("2023-01-03 12:00:00"));
+
     }
     @Test
     void testGet() {
-        fail("Not yet implemented");
+        int nr_sprzedazy = 1;
+
+        Sprzedaze sprzedaze = dao.get(nr_sprzedazy);
+        assertNotNull(sprzedaze);
     }
 
     @Test
     void testUpdate() {
-        fail("Not yet implemented");
+        Sprzedaze sprzedaze = new Sprzedaze();
+        sprzedaze.setNr_biletu(1);
+        sprzedaze.setData_sprzedazy(Timestamp.valueOf("2023-01-03 12:00:00"));
+        dao.update(sprzedaze);
     }
 
     @Test
     void testDelete() {
-        fail("Not yet implemented");
+
+        dao.delete(1);
     }
 }

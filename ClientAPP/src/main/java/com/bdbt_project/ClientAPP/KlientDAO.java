@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.namedparam.BeanPropertySqlParameterSource;
+import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.jdbc.core.simple.SimpleJdbcInsert;
 import org.springframework.stereotype.Repository;
 
@@ -12,13 +13,10 @@ import java.util.List;
 @Repository
 public class KlientDAO {
 
-    @Autowired
+
     private JdbcTemplate jdbcTemplate;
 
 
-    public KlientDAO(JdbcTemplate jdbcTemplate) {
-        this.jdbcTemplate = jdbcTemplate;
-    }
 
 
     public List<Klient> list() {
@@ -37,16 +35,33 @@ public class KlientDAO {
     }
 
 
-    public Klient get(int Nr_klienta) {
-        return null;
+    public Klient get(int nr_klienta) {
+        Object[] args = {nr_klienta};
+        String sql = "SELECT * FROM KLIENCI WHERE NR_KLIENTA  = " + "'" + args[0].toString() + "'";
+
+        return jdbcTemplate.queryForObject(sql, BeanPropertyRowMapper.newInstance(Klient.class));
+
     }
 
-    public void update(Klient klient) {
+        public void update(Klient klient) {
+        String sql = "UPDATE KLIENCI SET IMIE_KLIENTA=:Imie_klienta, NAZWISKO_KLIENTA=:Nazwisko_klienta, PLEC_KLIENTA=:Plec_klienta, DATA_URODZENIA_KLIENTA=:Data_urodzenia_klienta, PESEL_KLIENTA=:PESEL_klienta, EMAIL_KLIENTA=:Email_klienta, NR_TELEFONU_KLIENTA=:Nr_telefonu_klienta, NR_ZARZADU=:Nr_zarzadu, NR_ADRESU=:Nr_adresu, NR_POCZTY=:Nr_poczty WHERE NR_KLIENTA=:Nr_Klienta";
+        BeanPropertySqlParameterSource param = new BeanPropertySqlParameterSource(klient);
+
+        NamedParameterJdbcTemplate template = new NamedParameterJdbcTemplate(jdbcTemplate);
+
+        template.update(sql, param);
 
     }
 
     public void delete(int Nr_klienta) {
+        // trzeba pomyslec jak to zrobić
+        String sql = "DELETE FROM KLIENCI WHERE NR_KLIENTA = ?";
+        jdbcTemplate.update(sql,Nr_klienta);
 
+    }
+    public KlientDAO(JdbcTemplate jdbcTemplate){
+        super();
+        this.jdbcTemplate = jdbcTemplate;
     }
 
 }

@@ -30,20 +30,32 @@ public class KolejnosciDAOTest {
     }
     @Test
     void testSave() {
-        fail("Not yet implemented");
+       Kolejnosci kolejnosci = new Kolejnosci();
+       kolejnosci.setNr_kolejnosc(6);
+       kolejnosci.setNr_przystanku(1);
+       kolejnosci.setNr_trasy(1);
+       dao.save(kolejnosci);
     }
     @Test
     void testGet() {
-        fail("Not yet implemented");
+        int nr_kolejnosci = 1;
+
+        Kolejnosci kolejnosci = dao.get(nr_kolejnosci);
+        assertNotNull(kolejnosci);
     }
 
     @Test
     void testUpdate() {
-        fail("Not yet implemented");
+        Kolejnosci kolejnosci = new Kolejnosci();
+        kolejnosci.setNr_kolejnosc(1);
+        kolejnosci.setNr_przystanku(1);
+        kolejnosci.setNr_trasy(1);
+        dao.save(kolejnosci);
     }
 
     @Test
     void testDelete() {
-        fail("Not yet implemented");
+
+        dao.delete(1);
     }
 }

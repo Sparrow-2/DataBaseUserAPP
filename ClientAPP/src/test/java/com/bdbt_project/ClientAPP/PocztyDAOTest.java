@@ -31,20 +31,28 @@ public class PocztyDAOTest {
     }
     @Test
     void testSave() {
-        fail("Not yet implemented");
+        Poczty poczty = new Poczty("20-670","Lublin");
+        poczty.setNr_poczty(10);
+        dao.save(poczty);
     }
     @Test
     void testGet() {
-        fail("Not yet implemented");
+        int nr_poczty = 1;
+
+        Poczty poczty = dao.get(nr_poczty);
+        assertNotNull(poczty);
     }
 
     @Test
     void testUpdate() {
-        fail("Not yet implemented");
+        Poczty poczty = new Poczty("20-670","Lublin");
+        poczty.setNr_poczty(1);
+        dao.update(poczty);
     }
 
     @Test
     void testDelete() {
-        fail("Not yet implemented");
+
+        dao.delete(1);
     }
 }

@@ -31,20 +31,27 @@ public class AdresyDAOTest {
     }
     @Test
     void testSave() {
-        fail("Not yet implemented");
+        Adresy adresy = new Adresy("Lublin","Północna","1","2",2);
+        adresy.setNr_adresu(24);
+        dao.save(adresy);
     }
     @Test
     void testGet() {
-        fail("Not yet implemented");
+        int nr_adresu = 1;
+
+        Adresy adresy = dao.get(nr_adresu);
+        assertNotNull(adresy);
     }
 
     @Test
     void testUpdate() {
-        fail("Not yet implemented");
+        Adresy adresy = new Adresy("Lublin","Północna","1","2",2);
+        adresy.setNr_adresu(2);
+        dao.save(adresy);
     }
 
     @Test
     void testDelete() {
-        fail("Not yet implemented");
+        dao.delete(1);
     }
 }

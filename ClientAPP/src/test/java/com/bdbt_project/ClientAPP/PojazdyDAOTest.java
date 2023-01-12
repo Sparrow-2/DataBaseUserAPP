@@ -4,6 +4,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
+import org.springframework.security.core.parameters.P;
 
 
 import java.util.List;
@@ -32,20 +33,42 @@ public class PojazdyDAOTest {
     }
     @Test
     void testSave() {
-        fail("Not yet implemented");
+        Pojazdy pojazdy = new Pojazdy();
+        pojazdy.setRok_produkcji(2003);
+        pojazdy.setCzy_biletomat(true);
+        pojazdy.setCzy_klimatyzacja(true);
+        pojazdy.setCzy_monitoring(true);
+        pojazdy.setCzy_niskopodlogowy(true);
+        pojazdy.setLiczba_miejsc(80);
+        pojazdy.setNr_marki(1);
+        pojazdy.setNr_modelu(1);
+        pojazdy.setNr_pojazdu(10);
     }
     @Test
     void testGet() {
-        fail("Not yet implemented");
+        int nr_pojazdu = 1;
+
+        Pojazdy pojazdy= dao.get(nr_pojazdu);
+        assertNotNull(nr_pojazdu);
     }
 
     @Test
     void testUpdate() {
-        fail("Not yet implemented");
+
+        Pojazdy pojazdy = new Pojazdy();
+        pojazdy.setRok_produkcji(2003);
+        pojazdy.setCzy_biletomat(true);
+        pojazdy.setCzy_klimatyzacja(true);
+        pojazdy.setCzy_monitoring(true);
+        pojazdy.setCzy_niskopodlogowy(true);
+        pojazdy.setLiczba_miejsc(80);
+        pojazdy.setNr_marki(1);
+        pojazdy.setNr_modelu(1);
+        pojazdy.setNr_pojazdu(1);
     }
 
     @Test
     void testDelete() {
-        fail("Not yet implemented");
-    }
+
+        dao.delete(1);    }
 }

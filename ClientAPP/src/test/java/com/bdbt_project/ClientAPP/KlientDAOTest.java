@@ -2,7 +2,10 @@ package com.bdbt_project.ClientAPP;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.springframework.jdbc.core.JdbcOperations;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.namedparam.BeanPropertySqlParameterSource;
+import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 
 
@@ -50,16 +53,31 @@ public class KlientDAOTest {
 
     @Test
     void testGet() {
-        fail("Not yet implemented");
-    }
+        int nr_klienta = 1;
 
+        Klient klient = dao.get(nr_klienta);
+        assertNotNull(klient);
+    }
     @Test
     void testUpdate() {
-        fail("Not yet implemented");
+        Klient klient = new Klient();
+        klient.setImie_klienta("Zosia");
+        klient.setNazwisko_klienta("Zubrzycka");
+        klient.setEmail_klienta("zoszub1@wp.pl");
+        klient.setNr_klienta(3);
+        klient.setNr_adresu(12);
+        klient.setNr_poczty(12);
+        klient.setNr_zarzadu(1);
+        klient.setNr_telefonu_klienta("+48600600600");
+        klient.setPESEL_klienta("00000000000");
+        klient.setPlec_klienta("K");
+        klient.setData_urodzenia_klienta(Timestamp.valueOf("2003-03-13 06:25:00"));
+        dao.update(klient);
     }
 
     @Test
     void testDelete() {
-        fail("Not yet implemented");
+
+        dao.delete(1);
     }
 }
