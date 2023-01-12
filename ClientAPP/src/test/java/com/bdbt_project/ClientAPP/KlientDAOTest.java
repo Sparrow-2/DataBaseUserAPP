@@ -27,7 +27,7 @@ public class KlientDAOTest {
     void testList() {
         List<Klient> listKlient = dao.list();
 
-        assertTrue(listKlient.isEmpty());
+        assertFalse(listKlient.isEmpty());
     }
     @Test
     void testSave() {

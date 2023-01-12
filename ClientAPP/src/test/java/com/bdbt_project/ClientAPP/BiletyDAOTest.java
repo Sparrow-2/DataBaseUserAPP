@@ -28,7 +28,7 @@ public class BiletyDAOTest {
     void testList() {
         List<Bilety> listBilety = dao.list();
 
-        assertTrue(listBilety.isEmpty());
+        assertFalse(listBilety.isEmpty());
     }
     @Test
     void testSave() {

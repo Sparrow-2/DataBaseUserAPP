@@ -26,7 +26,7 @@ public class TrasyDAOTest {
     void testList() {
         List<Trasy> listTrasy = dao.list();
 
-        assertTrue(listTrasy.isEmpty());
+        assertFalse(listTrasy.isEmpty());
     }
     @Test
     void testSave() {

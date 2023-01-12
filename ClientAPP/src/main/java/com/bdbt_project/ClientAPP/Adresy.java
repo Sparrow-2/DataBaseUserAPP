@@ -1,6 +1,7 @@
 package com.bdbt_project.ClientAPP;
 
-public class Adresy {
+public class
+Adresy {
     private int Nr_adresu;
     private String Miasto;
     private String Ulica;

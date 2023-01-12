@@ -11,11 +11,12 @@ public class Pojazdy {
     private int  Nr_modelu;
     private int  Nr_marki;
 
+public Pojazdy(){
 
+}
 
-    public Pojazdy(int Nr_pojazdu, int Rok_produkcji, int Liczba_miejsc, boolean Czy_biletomat, boolean Czy_klimatyzacja, boolean Czy_monitoring, boolean Czy_niskopodlogowy, int  Nr_modelu, int  Nr_marki) {
+    public Pojazdy(int Rok_produkcji, int Liczba_miejsc, boolean Czy_biletomat, boolean Czy_klimatyzacja, boolean Czy_monitoring, boolean Czy_niskopodlogowy, int  Nr_modelu, int  Nr_marki) {
         super();
-        this.Nr_pojazdu = Nr_pojazdu;
         this.Rok_produkcji = Rok_produkcji;
         this.Liczba_miejsc = Liczba_miejsc;
         this.Czy_biletomat = Czy_biletomat;

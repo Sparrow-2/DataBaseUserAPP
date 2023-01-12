@@ -25,7 +25,7 @@ public class SprzedazeDAOTest {
     void testList() {
         List<Sprzedaze> listSprzedaze = dao.list();
 
-        assertTrue(listSprzedaze.isEmpty());
+        assertFalse(listSprzedaze.isEmpty());
     }
     @Test
     void testSave() {

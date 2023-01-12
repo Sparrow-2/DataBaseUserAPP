@@ -26,7 +26,7 @@ public class KolejnosciDAOTest {
     void testList() {
         List<Kolejnosci> listKolejnosci = dao.list();
 
-        assertTrue(listKolejnosci.isEmpty());
+        assertFalse(listKolejnosci.isEmpty());
     }
     @Test
     void testSave() {

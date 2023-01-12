@@ -27,7 +27,7 @@ public class AdresyDAOTest {
     void testList() {
         List<Adresy> listAdresy = dao.list();
 
-        assertTrue(listAdresy.isEmpty());
+        assertFalse(listAdresy.isEmpty());
     }
     @Test
     void testSave() {

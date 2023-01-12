@@ -1,12 +1,14 @@
 package com.bdbt_project.ClientAPP;
 
+import java.sql.Timestamp;
+
 public class Bilety {
     private int Nr_biletu;
     private String Rodzaj_biletu;
-    private String Czas_skasowania;
-    private String Koniec_waznosci;
-    private String Czy_ulgowy;
-    private int Cena;
+    private Timestamp Czas_skasowania;
+    private Timestamp Koniec_waznosci;
+    private boolean Czy_ulgowy;
+    private float Cena;
     private int Nr_zarzadu;
     private int Nr_klienta;
 
@@ -14,74 +16,95 @@ public class Bilety {
     public  Bilety() {
 
     }
-    public Bilety(String Rodzaj_biletu, String Czas_skasowania, String Koniec_waznosci, String Czy_ulgowy, int Cena, int Nr_zarzadu, int Nr_klienta) {
+
+    public Bilety(String rodzaj_biletu, Timestamp czas_skasowania, Timestamp koniec_waznosci, boolean czy_ulgowy, float cena, int nr_zarzadu, int nr_klienta) {
         super();
-        this.Rodzaj_biletu = Rodzaj_biletu;
-        this.Czas_skasowania = Czas_skasowania;
-        this.Koniec_waznosci = Koniec_waznosci;
-        this.Czy_ulgowy = Czy_ulgowy;
-        this.Cena = Cena;
-        this.Nr_zarzadu = Nr_zarzadu;
-        this.Nr_klienta = Nr_klienta;
+        this.Rodzaj_biletu = rodzaj_biletu;
+        this.Czas_skasowania = czas_skasowania;
+        this.Koniec_waznosci = koniec_waznosci;
+        this.Czy_ulgowy = czy_ulgowy;
+        this.Cena = cena;
+        this.Nr_zarzadu = nr_zarzadu;
+        this.Nr_klienta = nr_klienta;
     }
 
-    public int getNr_biletu(){
+
+
+    public int getNr_biletu() {
         return Nr_biletu;
     }
-    public void setNr_biletu(int Nr_biletu){
-        this.Nr_biletu = Nr_biletu;
+
+    public void setNr_biletu(int nr_biletu) {
+        Nr_biletu = nr_biletu;
     }
 
-    public String getRodzaj_biletu(){
+    public String getRodzaj_biletu() {
         return Rodzaj_biletu;
     }
-    public void setRodzaj_biletu(String Rodzaj_biletu){
-        this.Rodzaj_biletu = Rodzaj_biletu;
+
+    public void setRodzaj_biletu(String rodzaj_biletu) {
+        Rodzaj_biletu = rodzaj_biletu;
     }
 
-    public String getCzas_skasowania(){
+    public Timestamp getCzas_skasowania() {
         return Czas_skasowania;
     }
-    public void setCzas_skasowania(String Czas_skasowania){
-        this.Czas_skasowania = Czas_skasowania;
+
+    public void setCzas_skasowania(Timestamp czas_skasowania) {
+        Czas_skasowania = czas_skasowania;
     }
 
-    public String getKoniec_waznosci(){
+    public Timestamp getKoniec_waznosci() {
         return Koniec_waznosci;
     }
-    public void setKoniec_waznosci(String Koniec_waznosci){
-        this.Koniec_waznosci = Koniec_waznosci;
+
+    public void setKoniec_waznosci(Timestamp koniec_waznosci) {
+        Koniec_waznosci = koniec_waznosci;
     }
 
-    public String getCzy_ulgowy(){
+    public boolean isCzy_ulgowy() {
         return Czy_ulgowy;
     }
-    public void setCzy_ulgowy(String Czy_ulgowy){
-        this.Czy_ulgowy = Czy_ulgowy;
+
+    public void setCzy_ulgowy(boolean czy_ulgowy) {
+        Czy_ulgowy = czy_ulgowy;
     }
 
-    public int getCena(){
+    public float getCena() {
         return Cena;
     }
-    public void setCena(int Cena_klienta){
-        this.Cena = Cena;
+
+    public void setCena(float cena) {
+        Cena = cena;
     }
 
-    public int getNr_zarzadu(){
+    public int getNr_zarzadu() {
         return Nr_zarzadu;
     }
-    public void setNr_zarzadu(int Nr_zarzadu){
-        this.Nr_zarzadu = Nr_zarzadu;
+
+    public void setNr_zarzadu(int nr_zarzadu) {
+        Nr_zarzadu = nr_zarzadu;
     }
-    public int Nr_klienta(){
+
+    public int getNr_klienta() {
         return Nr_klienta;
     }
-    public void setNr_klienta(int Nr_klienta){
-        this.Nr_klienta = Nr_klienta;
+
+    public void setNr_klienta(int nr_klienta) {
+        Nr_klienta = nr_klienta;
     }
 
     @Override
     public String toString() {
-        return "Bilety [Nr_biletu=" + Nr_biletu + ", Rodzaj_biletu=" + Rodzaj_biletu + ", Czas_skasowania=" + Czas_skasowania + ", Koniec_waznosci=" + Koniec_waznosci + ", Czy_ulgowy=" + Czy_ulgowy + ", Cena=" + Cena + ", Nr_zarzadu=" + Nr_zarzadu + ", Nr_klienta=" + Nr_klienta + "]";
+        return "Bilety{" +
+                "Nr_biletu=" + Nr_biletu +
+                ", Rodzaj_biletu='" + Rodzaj_biletu + '\'' +
+                ", Czas_skasowania=" + Czas_skasowania +
+                ", Koniec_waznosci=" + Koniec_waznosci +
+                ", Czy_ulgowy=" + Czy_ulgowy +
+                ", Cena=" + Cena +
+                ", Nr_zarzadu=" + Nr_zarzadu +
+                ", Nr_klienta=" + Nr_klienta +
+                '}';
     }
 }
