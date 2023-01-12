@@ -12,7 +12,7 @@ public class Klient {
     private String Plec_klienta;
     private Timestamp Data_urodzenia_klienta;
     private String PESEL_klienta;
-    private String Adres_klienta;
+
     private String Email_klienta;
     private String Nr_telefonu_klienta;
     private int Nr_zarzadu;
@@ -23,14 +23,14 @@ public class Klient {
 
   }
 
-    public Klient(String imie_klienta, String nazwisko_klienta, String plec_klienta, Timestamp data_urodzenia_klienta, String PESEL_klienta, String adres_klienta, String email_klienta, String nr_telefonu_klienta, int nr_zarzadu, int nr_adresu, int nr_poczty) {
+    public Klient(String imie_klienta, String nazwisko_klienta, String plec_klienta, Timestamp data_urodzenia_klienta, String PESEL_klienta,  String email_klienta, String nr_telefonu_klienta, int nr_zarzadu, int nr_adresu, int nr_poczty) {
         super();
         this.Imie_klienta = imie_klienta;
         this.Nazwisko_klienta = nazwisko_klienta;
         this.Plec_klienta = plec_klienta;
         this.Data_urodzenia_klienta = data_urodzenia_klienta;
         this.PESEL_klienta = PESEL_klienta;
-        this.Adres_klienta = adres_klienta;
+
         this.Email_klienta = email_klienta;
         this.Nr_telefonu_klienta = nr_telefonu_klienta;
         this.Nr_zarzadu = nr_zarzadu;
@@ -86,13 +86,8 @@ public class Klient {
         this.PESEL_klienta = PESEL_klienta;
     }
 
-    public String getAdres_klienta() {
-        return Adres_klienta;
-    }
 
-    public void setAdres_klienta(String adres_klienta) {
-        Adres_klienta = adres_klienta;
-    }
+
 
     public String getEmail_klienta() {
         return Email_klienta;
@@ -143,7 +138,7 @@ public class Klient {
                 ", Plec_klienta='" + Plec_klienta + '\'' +
                 ", Data_urodzenia_klienta=" + Data_urodzenia_klienta +
                 ", PESEL_klienta='" + PESEL_klienta + '\'' +
-                ", Adres_klienta='" + Adres_klienta + '\'' +
+
                 ", Email_klienta='" + Email_klienta + '\'' +
                 ", Nr_telefonu_klienta='" + Nr_telefonu_klienta + '\'' +
                 ", Nr_zarzadu=" + Nr_zarzadu +
