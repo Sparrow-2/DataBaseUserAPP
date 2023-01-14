@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Zarządzanie pracownikami</title>
+    <link th:rel="stylesheet" th:href="@{/webjars/bootstrap/4.0.0-2/css/bootstrap.min.css} "/>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+    <div class="container">
+        <a class="navbar-brand" href="/">ZTM Warszawa</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                aria-controls="navbarResponsive"
+                aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/index}">Home</a>
+                </li>
+
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Main
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" th:inline="text" style="color:lightskyblue;">Jesteś zalogowany jako <b
+                            style="text-transform:capitalize">[[${#httpServletRequest.remoteUser}]]</b></a>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-10 mt-5">
+
+            <label style="font-size:30px">Zarządzanie pracownikami</label>
+            <div style="font-size:20px">Edytowanie danych pracowników
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="col-md-10 mt-5">
+        <table border="1" cellpadding="10">
+            <thead>
+            <tr>
+                <th>Nr</th>
+                <th>Imię</th>
+                <th>Nazwisko</th>
+                <th>PESEL</th>
+                <th>Płeć</th>
+                <th>Nr konta</th>
+                <th>Nr telefonu</th>
+                <th>E-mail</th>
+                <th>Data urodzenia</th>
+                <th>Data zatrudnienia</th>
+                <th>Data badania</th>
+                <th>Data ważności badania</th>
+                <th>Nr zarządu</th>
+                <th>Nr adresu</th>
+                <th>Nr poczty</th>
+                <th>Nr stanowiska</th>
+                <th>Operacja</th>
+            </tr>
+            </thead>
+
+            <tbody>
+            <tr th:each="pracownicy : ${listPracownicy}">
+                <td th:text="${pracownicy.Nr_pracownika}">ID</td>
+                <td th:text="${pracownicy.Imie_pracownika}">Imię</td>
+                <td th:text="${pracownicy.Nazwisko_pracownika}">Nazwisko</td>
+                <td th:text="${pracownicy.PESEL_pracownika}">PESEL</td>
+                <td th:text="${pracownicy.Plec_pracownika}">Płeć</td>
+                <td th:text="${pracownicy.Nr_konta}">Nr konta</td>
+                <td th:text="${pracownicy.Nr_telefonu_pracownika}">Nr telefonu</td>
+                <td th:text="${pracownicy.Email_pracownika}">E-mail</td>
+                <td th:text="${pracownicy.Data_urodzenia_pracownika}">Data urodzenia</td>
+                <td th:text="${pracownicy.Data_zatrudnienia_pracownika}">Data zatrudnienia</td>
+                <td th:text="${pracownicy.Data_badania}">Data badania</td>
+                <td th:text="${pracownicy.Data_waznosci_badan}">Data waznosci badan</td>
+                <td th:text="${pracownicy.Nr_zarzadu}">Nr zarządu</td>
+                <td th:text="${pracownicy.Nr_adresu}">Nr adresu</td>
+                <td th:text="${pracownicy.Nr_poczty}">Nr poczty</td>
+                <td th:text="${pracownicy.Nr_stanowiska}">Nr stanowiska</td>
+                <td>
+                    <a th:href="@{'/edit/' + ${pracownicy.Nr_pracownika}}">Edytuj</a>
+                    &nbsp;&nbsp;&nbsp;&nbsp;
+                    <a th:href="@{'/delete/' + ${pracownicy.Nr_pracownika}}">Usuń</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+
+        <a href="/new">Dodaj nowego pracownika</a>
+    </div>
+</div>
+
+<script th:src="@{/webjars/jquery/jquery.min.js}"></script>
+<script th:src="@{/webjars/popper.js/umd/popper.min.js}"></script>
+<script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
+<script th:src="@{/js/script.js}"></script>
+
+</body>
+</html>

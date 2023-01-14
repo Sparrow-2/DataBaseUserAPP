@@ -61,6 +61,18 @@
     </div>
 </div>
 
+<div class="container">
+  <a th:object="${klient}" th:href="@{'/edit_user_data/' + ${idKlienta}}">
+    <button class="btn btn-outline-">Edytuj swoje dane</button>
+  </a>
+</div>
+
+<div class="container">
+  <a th:href="@{/choose_route_type}">
+    <button class="btn btn-outline-">Sprawdź linie</button>
+  </a>
+</div>
+
 
 <script th:src="@{/webjars/jquery/jquery.min.js}"></script>
 <script th:src="@{/webjars/popper.js/umd/popper.min.js}"></script>

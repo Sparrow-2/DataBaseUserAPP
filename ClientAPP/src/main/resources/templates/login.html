@@ -1,8 +1,14 @@
 <!DOCTYPE HTML>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
 <head>
   <meta charset="UTF-8"/>
-  <title>Login Page</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="remixicons/fonts/remixicon.css">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+  <title>Strona logowania</title>
 
   <link th:rel="stylesheet" th:href="@{/webjars/bootstrap/4.0.0-2/css/bootstrap.min.css} "/>
 
@@ -12,7 +18,7 @@
 <!-- Navigation -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
   <div class="container">
-    <a class="navbar-brand" href="/">BDBT Spring Boot Project - Part II</a>
+    <a class="navbar-brand" href="/">ZTM Warszawa</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
             aria-controls="navbarResponsive"
             aria-expanded="false" aria-label="Toggle navigation">
@@ -26,7 +32,7 @@
         </li>
 
         <li class="nav-item active">
-          <a class="nav-link" href="#">Login
+          <a class="nav-link" href="#">Zaloguj sie
             <span class="sr-only">(current)</span>
           </a>
         </li>
@@ -55,10 +61,10 @@
         </div>
 
         <div th:if="${param.error}" style="color:red; margin-bottom:15px">
-          ERROR: Invalid username or password!
+          ERROR: Nieprawidlowa nazwa uzytkownika lub haslo!
         </div>
 
-        <button class="btn btn-primary" type="submit" value="Sign In">Login</button>
+        <button class="btn btn-primary" type="submit" value="Sign In">Zaloguj sie</button>
       </form>
 
 

@@ -35,10 +35,10 @@ public class KlientDAOTest {
     }
     @Test
     void testSave(){Klient klient = new Klient();
-            klient.setImie_klienta("Zosia");
+            klient.setImie_klienta("Zofia");
             klient.setNazwisko_klienta("Zubrzycka");
             klient.setEmail_klienta("zoszub1@wp.pl");
-            klient.setNr_klienta(4);
+            klient.setNr_klienta(18);
             klient.setNr_adresu(12);
             klient.setNr_poczty(12);
             klient.setNr_zarzadu(1);
@@ -61,10 +61,10 @@ public class KlientDAOTest {
     @Test
     void testUpdate() {
         Klient klient = new Klient();
+        klient.setNr_klienta(18);
         klient.setImie_klienta("Zosia");
         klient.setNazwisko_klienta("Zubrzycka");
         klient.setEmail_klienta("zoszub1@wp.pl");
-        klient.setNr_klienta(3);
         klient.setNr_adresu(12);
         klient.setNr_poczty(12);
         klient.setNr_zarzadu(1);
@@ -78,6 +78,6 @@ public class KlientDAOTest {
     @Test
     void testDelete() {
 
-        dao.delete(1);
+        dao.delete(18);
     }
 }

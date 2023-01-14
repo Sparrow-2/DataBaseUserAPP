@@ -37,9 +37,9 @@
 					<a class="nav-link" href="#trasy">Trasy i pojazdy</a>
 				</li>
 
-			</ul>
 
-			<a href="#" class="btn btn-outline-brand ms-lg-3">Zaloguj sie</a>
+			<a class="btn btn-outline-brand ms-lg-3" th:href="@{/login}">Zaloguj sie</a>
+			</ul>
 		</div>
 	</div>
 </nav>
@@ -53,7 +53,7 @@
 			<div class="col-lg-6">
 				<h1 class="display-3">Zabrać cie w podróz?</h1>
 				<p>Zacznij swoją przygodę z komunikacją miejską już dziś.</p>
-				<a href="#" class="btn btn-brand">Zaloguj sie/Zaloz konto</a>
+				<a class="btn btn-outline-brand " th:href="@{/login}">Zaloguj sie</a>
 			</div>
 
 		</div>
@@ -116,7 +116,8 @@
 					<div class="content">
 						<h3 class="h5">Autobusy</h3>
 						<p>Nasza flota autobusowa.</p>
-						<a href="#" class="link-more">Dowiedz się więcej<i class="ri-arrow-right-line icon"></i></a>
+
+						<a th:href="@{/login}" class="link-more">Dowiedz się więcej<i class="ri-arrow-right-line icon"></i></a>
 					</div>
 				</div>
 			</div>
@@ -130,7 +131,7 @@
 					<div class="content">
 						<h3 class="h5">Tramwaje</h3>
 						<p>Nasza flota tramwajowa.</p>
-						<a href="#" class="link-more">Dowiedz się więcej <i class="ri-arrow-right-line icon"></i></a>
+						<a th:href="@{/login}" class="link-more">Dowiedz się więcej<i class="ri-arrow-right-line icon"></i></a>
 					</div>
 				</div>
 			</div>
@@ -145,7 +146,7 @@
 					<div class="content">
 						<h3 class="h5">Trasy</h3>
 						<p>Oferta dostępnych tras.</p>
-						<a href="#" class="link-more">Dowiedz się więcej <i class="ri-arrow-right-line icon"></i></a>
+						<a th:href="@{/login}" class="link-more">Dowiedz się więcej<i class="ri-arrow-right-line icon"></i></a>
 					</div>
 				</div>
 			</div>
@@ -155,8 +156,7 @@
 		</div>
 
 		<div class="cta-btns">
-			<a href="#" class="btn btn-brand me-sm-2">Appointment</a>
-			<a href="#" class="btn btn-outline-brand ms-sm-2">Get in touch</a>
+			<a class="btn btn-outline-brand ms-sm-2" th:href="@{/login}">Zaloguj sie</a>
 
 		</div>
 	</div>
@@ -166,7 +166,7 @@
 
 <style type="text/css">body, a, a:hover {cursor: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAAAXNSR0IArs4c6QAAAwpJREFUeF5jZBjhgHGE+59hNABGU8AID4HRLDDCE8BoITiaBUazwAgPgdEsMMITwGgtMJoFRrPACA+B0SxAbAKo3eT8H6T2/38wRTXQ4r+PpEio2eiE1QFMjExgNzX57SHJPKIVj4gA+P/////aTc5YY1deSolqsT6QBnGzCYGtj9LvAkc+SgoY8QEAChGXqBSiMrmAiNhARiTJdrvHvkLRk2o6BzMFjAYAAwMD08zHeFOA9Yl+cEgetSjEGgtqMpA8hg50draCha64V5MUe5Tqg1lGdAoYsQHQfAwS8/WX8UcQoRSArluYjxMsZH+8b3CngBEfAISSPixmSU0BMH1OBxvBzH329WAaV1lB7bKD6DJgNAAIlP6wGCSpCCdDMbXbF8wskErNJfI1imsw2gGEUsCIDQC5l+fBIadyYxMZ8Um+FgFhUYhmRqL7a1gtQ6//YYqITgEjJgBk6tejtAAl3lwHB5bA+3tg2iIcQsPAp5fCYCaf+Fvyo5kEnYzQfhvLD02wLimlHyToRij1qt8C5khve4HaFxjxAXD/8VNwCph5Ih4cQrDSk5EJkjBOroKMB/ALQ3qBvs62YPrMZUhKef7qDZjWcD5BVszg0nT7mCRY6u93eTDt72IPpjfuOYiiBVdeRzeX9ftvsFCC3ULUFDDiA+D12/fgqJ54JBhrZJxYCUkB3p6eYFpBCnU8YPcRSMwL6O4E00zM/6iSEgjZC7Nk6cbtKCmQ0AgWRi0w0gIgxWQ2OMDglSyu0VZYCKPHBEwclhLevv8IFrr1azqYZuP+TpMUgG4vrhSAbnmqzUSwkLywLkrDYjQAiI0m2FghrAxA13f09Fmw0JpJbZQ13dAMJtbextwUsE5tVSWS7CdaMbEOGbYBAIsYXKPGe5ZBRllpBXDZq6oIaR9Mb60ly36SNY34AKBVDA+UuSSngIFyKK3sHQ0AWoXsUDF3NAUMlZiilTtHUwCtQnaomDuaAoZKTNHKnaMpgFYhO1TMHU0BQyWmaOXO0RRAq5AdKuaOpoChElO0cicAZtqGTK8+uksAAAAASUVORK5CYII=) 4 22, default;}</style>
 
-<script data-style="modern" data-speed="30000" data-position="rm" data-size="78" data-arrowtype="ar2" data-bgcolor="rgb(115,198,42)" src="http://profilki.pl/scr/uparrow.js"></script>
+<script data-style="modern" data-speed="2000" data-position="rm" data-size="78" data-arrowtype="ar2" data-bgcolor="rgb(115,198,42)" src="http://profilki.pl/scr/uparrow.js"></script>
 
 <!-- FOOTER -->
 <footer>

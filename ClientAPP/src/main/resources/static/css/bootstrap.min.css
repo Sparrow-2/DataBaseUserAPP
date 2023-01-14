@@ -11,11 +11,10 @@
 
 body {
 	font-family: "Inter", 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-	color: var(--body);
 	line-height: 1.8;
-	background-color: var(--bg1);
 	
 }
+
 
 h1,h2,h3,h4,h5,h6 {
 	font-family: "Dela Gothic One", 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -91,7 +90,7 @@ section {
 
 /* NAVBAR */
 .navbar {
-	background: linear-gradient(#1B1F34,rgba(27, 31, 52, 0.0)));
+	background-color: #343A40;
 }
 
 .navbar .navbar-nav .nav-link.active {
@@ -112,9 +111,14 @@ section {
 	min-height: 100vh;
 	background-position: center;
 	background-size: cover;
-	
+
+}
+
+#hero h1 {
+	color: var(--white);
 }
 #hero p {
+	color: var(--white);
 	margin-top: 30px;
 	margin-bottom: 24px;
 	
