@@ -8,6 +8,7 @@ public class Stop {
     private boolean czy_ekran;
     private boolean czy_wiata;
     private int nr_zarzadu;
+    public Stop(){ };
 
     public Stop(int nr_przystanku, String nazwa_przystanku, char rodzaj_przystanku, boolean czy_biletomat, boolean czy_ekran, boolean czy_wiata, int nr_zarzadu) {
         this.nr_przystanku = nr_przystanku;

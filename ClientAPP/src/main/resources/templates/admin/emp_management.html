@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <title>Zarządzanie pracownikami</title>
@@ -101,8 +101,9 @@
             </tr>
             </tbody>
         </table>
-
-        <a href="/new">Dodaj nowego pracownika</a>
+        <a th:href="@{/new}">
+            <button class="btn btn-outline-">Dodaj pracownikow </button>
+        </a>
     </div>
 </div>
 

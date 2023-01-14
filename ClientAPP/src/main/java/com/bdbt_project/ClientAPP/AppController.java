@@ -121,6 +121,7 @@ public class AppController {
             return "admin/emp_management";
         }
 
+
         @RequestMapping(value={"/new"})
         public String showNewEmpPage(Model model) {
             Pracownicy pracownicy = new Pracownicy();
@@ -128,29 +129,28 @@ public class AppController {
             return "admin/new_form";
         }
 
-//        @RequestMapping(value = "/new_stop")
-//        public String showNewStopPage(Model model) {
-//            Stop przystanek = new Stop();
-//            model.addAttribute("przystanek", przystanek);
-//
-//            return "admin/new_stop_form";
-//        }
-//
-//        @RequestMapping(value = "/new_route")
-//        public String showNewRoutePage(Model model) {
-//            Trasy linia = new Trasy();
-//            model.addAttribute("linia", linia);
-//
-//            return "admin/new_route_form";
-//        }
+      @RequestMapping(value = "/new_stop")
+        public String showNewStopPage(Model model) {
+            Stop przystanek = new Stop();
+            model.addAttribute("przystanek", przystanek);
 
-//        @RequestMapping(value = "/new_stop_on_route")
-//        public String showNewStopOnRouteForm(Model model) {
-//            PrzystankiNaLinii przystankiNaLinii = new PrzystankiNaLinii();
-//            model.addAttribute("przystankiNaLinii", przystankiNaLinii);
-//
-//            return "admin/new_stop_on_route_form";
-//        }
+            return "admin/new_stop_form";
+        }
+        @RequestMapping(value = "/new_route")
+        public String showNewRoutePage(Model model) {
+            Trasy linia = new Trasy();
+            model.addAttribute("linia", linia);
+
+            return "admin/new_route_form";
+        }
+
+        @RequestMapping(value = "/new_stop_on_route")
+        public String showNewStopOnRouteForm(Model model) {
+            Kolejnosci kolejnosci = new Kolejnosci();
+            model.addAttribute("przystankiNaLinii", kolejnosci);
+
+            return "admin/new_stop_on_route_form";
+        }
 
 //        @RequestMapping(value = "/inspect_route/{idLinii}/new_stop_on_route")
 //        public ModelAndView showNewStopOnRoutePage(Model model, @PathVariable(name = "idLinii") int id) {

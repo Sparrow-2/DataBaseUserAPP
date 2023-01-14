@@ -43,55 +43,83 @@
 
     <br/>
 
-    <form action="#" th:action="@{/save}" th:object="${pracownik}" method="post">
+    <form action="#" th:action="@{/save}" th:object="${pracownicy}" method="post">
         <table border="1" cellpadding="10">
             <tr>
                 <td>Imie:</td>
-                <td><input type="text" th:field="*{imie}"></td>
+                <td><input type="text" th:field="*{Imie_pracownika}"></td>
             </tr>
 
             <tr>
                 <td>Nazwisko:</td>
-                <td><input type="text" th:field="*{nazwisko}"></td>
+                <td><input type="text" th:field="*{Nazwisko_pracownika}"></td>
             </tr>
 
             <tr>
                 <td>PESEL:</td>
-                <td><input type="text" th:field="*{pesel}"></td>
+                <td><input type="text" th:field="*{PESEL_pracownika}"></td>
             </tr>
 
             <tr>
                 <td>Nr telefonu:</td>
-                <td><input type="text" th:field="*{telefon}"></td>
+                <td><input type="text" th:field="*{Nr_telefonu_pracownika}"></td>
             </tr>
 
             <tr>
-                <td>E-mail:</td>
-                <td><input type="text" th:field="*{email}"></td>
+                <td>Płeć:</td>
+                <td><input type="text" th:field="*{Plec_pracownika}"></td>
             </tr>
 
             <tr>
                 <td>Nr konta bankowego:</td>
-                <td><input type="text" th:field="*{numerKontaBankowego}"></td>
+                <td><input type="text" th:field="*{Nr_konta}"></td>
             </tr>
 
             <tr>
-                <td>Stanowisko:</td>
-                <td><input type="text" th:field="*{stanowisko}"></td>
+                <td>Email:</td>
+                <td><input type="text" th:field="*{Email_pracownika}"></td>
             </tr>
 
             <tr>
-                <td>ID bazy:</td>
-                <td><input type="text" th:field="*{idBazy}"></td>
+                <td>Data urodzenia </td>
+                <td><input type="text" th:field="*{Data_urodzenia_pracownika}"></td>
+            </tr>
+            <tr>
+                <td>Data zatrudnienia </td>
+                <td><input type="text" th:field="*{Data_zatrudnienia_pracownika}"></td>
             </tr>
 
             <tr>
-                <td>ID adresu:</td>
-                <td><input type="text" th:field="*{idAdresu}"></td>
+                <td>Data badania :</td>
+                <td><input type="text" th:field="*{Data_badania}"></td>
             </tr>
 
             <tr>
-                <td colspan="2" align="center"><button type="submit">Zapisz</button></td>
+                <td>Data ważności badania :</td>
+                <td><input type="text" th:field="*{Data_waznosci_badan}"></td>
+            </tr>
+            <tr>
+                <td>Nr zarzadu :</td>
+                <td><input type="text" th:field="*{Nr_zarzadu}"></td>
+            </tr>
+            <tr>
+                <td>Nr adresu </td>
+                <td><input type="text" th:field="*{Nr_adresu}"></td>
+            </tr>
+            <tr>
+                <td>Nr poczty</td>
+                <td><input type="text" th:field="*{Nr_poczty}"></td>
+            </tr>
+            <tr>
+                <td> Nr stanowiska </td>
+                <td><input type="text" th:field="*{Nr_stanowiska}"></td>
+            </tr>
+
+
+            <tr>
+                <a th:href="@{/save}">
+                    <button class="btn btn-outline-">Zapisz pracownika </button>
+                </a>
             </tr>
         </table>
     </form>
