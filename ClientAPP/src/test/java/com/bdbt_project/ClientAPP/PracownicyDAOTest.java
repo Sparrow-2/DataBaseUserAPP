@@ -36,6 +36,7 @@ public class PracownicyDAOTest {
     }
     @Test
     void testSave(){Pracownicy pracownicy = new Pracownicy();
+        pracownicy.setNr_pracownika(5);
         pracownicy.setImie_pracownika("Tomasz");
         pracownicy.setNazwisko_pracownika("Wróbel");
         pracownicy.setPESEL_pracownika("12345678901");
