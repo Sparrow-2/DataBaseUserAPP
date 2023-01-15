@@ -1,17 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <title>Środki transportu</title>
+    <meta charset="UTF-8"/>
+    <title>Main User Page</title>
 
     <link th:rel="stylesheet" th:href="@{/webjars/bootstrap/4.0.0-2/css/bootstrap.min.css} "/>
 
 </head>
 <body>
 
+<!-- Navigation -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
     <div class="container">
-        <a class="navbar-brand" href="/">Warszawska Baza Komunikacji Miejskiej</a>
+        <a class="navbar-brand" href="/">ZTM Warszawa</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
                 aria-controls="navbarResponsive"
                 aria-expanded="false" aria-label="Toggle navigation">
@@ -44,35 +45,36 @@
     <div class="row">
         <div class="col-md-10 mt-5">
 
-            <label style="font-size:30px">Wybierz linie</label>
-            <div style="font-size:20px">Kliknij w interesującą cię linie
+            <label style="font-size:30px">Wybierz interesującą Ciebie informacje</label>
+            <div style="font-size:20px">Wybierz interesującą Ciebie informację
             </div>
 
         </div>
     </div>
 </div>
-
+<br>
 <div class="container">
-    <div class="col-md-10 mt-5">
-        <table border="1" cellpadding="10">
-            <thead>
-            <tr>
-                <th>ID</th>
-            </tr>
-            </thead>
-
-            <tbody>
-            <tr th:each="linia : ${listLiniaType}">
-                <!--        <td th:text="${linia.idLinii}">ID</td>-->
-                <td>
-                    <a th:href="@{'/inspect_route_user/' + ${linia.idLinii}}" th:text="${linia.idLinii}">ID</a>
-                </td>
-            </tr>
-            </tbody>
-        </table>
-
-    </div>
+    <a th:href="@{'/stop_list'}">
+        <button class="btn btn-outline-">Przystanek </button>
+    </a>
 </div>
+<br>
+<div class="container">
+    <a th:href="@{'/routes_listu'}">
+        <button class="btn btn-outline-">Trasy</button>
+    </a>
+</div>
+<br>
+
+
+
+
+
+
+<script th:src="@{/webjars/jquery/jquery.min.js}"></script>
+<script th:src="@{/webjars/popper.js/umd/popper.min.js}"></script>
+<script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
+<script th:src="@{/js/script.js}"></script>
 
 </body>
 </html>

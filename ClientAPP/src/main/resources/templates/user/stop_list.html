@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
   <meta charset="UTF-8">
-  <title>Przystanki</title>
+  <title>Środki transportu</title>
 
   <link th:rel="stylesheet" th:href="@{/webjars/bootstrap/4.0.0-2/css/bootstrap.min.css} "/>
 
@@ -44,37 +44,43 @@
   <div class="row">
     <div class="col-md-10 mt-5">
 
-      <label style="font-size:30px">Przystanki</label>
-      <div style="font-size:20px">Przystanki występujące na tej linii
+      <label style="font-size:30px">Oto dostępne u nas przzystanki</label>
+      <div style="font-size:20px">Zobacz jakie mają atrybuty
       </div>
 
     </div>
   </div>
 </div>
 
-
 <div class="container">
   <div class="col-md-10 mt-5">
-    <!--        <tr th:each="przystankiNaLinii : ${listPrzystankiNaLinii}">-->
-    <!--            <a th:href="@{${przystankiNaLinii.idLinii} + '/new_stop_on_route'}"}>Dodaj nowy przystanek</a>-->
-    <!--        </tr>-->
-
     <table border="1" cellpadding="10">
       <thead>
       <tr>
+        <th>Numer przystanku</th>
         <th>Nazwa</th>
+        <th>Rodzaj przystanku</th>
+        <th>Czy posiada biletomat</th>
+        <th>Czy posiada ekran</th>
+        <th>Czy posiada wiatę</th>
       </tr>
       </thead>
 
       <tbody>
-      <tr th:each="przystankiNaLinii : ${listPrzystankiNaLinii}">
-        <td th:text="${przystankiNaLinii.nazwa}">Nazwa</td>
+      <tr th:each="przystanek : ${listStop}">
+        <td th:text="${przystanek.nr_przystanku}">Numer </td>
+        <td th:text="${przystanek.nazwa_przystanku}">Nazwa</td>
+        <td th:text="${przystanek.rodzaj_przystanku}">Rodzaj</td>
+        <td th:text="${przystanek.czy_biletomat}">Biletomat</td>
+        <td th:text="${przystanek.czy_ekran}">Ekran</td>
+        <td th:text="${przystanek.czy_wiata}">Wiata</td>
       </tr>
       </tbody>
     </table>
 
   </div>
 </div>
-
+<br>
+<br>
 </body>
 </html>
