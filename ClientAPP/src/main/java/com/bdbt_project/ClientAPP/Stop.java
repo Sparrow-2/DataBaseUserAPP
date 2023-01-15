@@ -20,6 +20,14 @@ public class Stop {
         this.nr_zarzadu = nr_zarzadu;
     }
 
+    public int getNr_zarzadu() {
+        return nr_zarzadu;
+    }
+
+    public void setNr_zarzadu(int nr_zarzadu) {
+        this.nr_zarzadu = nr_zarzadu;
+    }
+
     public int getNr_przystanku() {
         return nr_przystanku;
     }

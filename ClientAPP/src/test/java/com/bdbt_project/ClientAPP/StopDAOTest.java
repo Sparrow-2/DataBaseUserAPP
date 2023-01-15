@@ -47,12 +47,13 @@ public class StopDAOTest {
     @Test
     void testSave(){
 
-        Stop stop = new Stop(10,"MŁYNÓW01",'A',true,true,true,1);
+        Stop stop = new Stop(15,"MŁYNÓW01",'A',true,true,true,1);
         dao.save(stop);
     }
     @Test
     void testUpdate() {
         Stop stop = new Stop(1,"MŁYNÓW01",'A',true,true,true,1);
+
         dao.update(stop);
     }
 

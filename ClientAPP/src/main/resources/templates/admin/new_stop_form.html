@@ -46,32 +46,41 @@
   <form action="#" th:action="@{/savePrzystanek}" th:object="${przystanek}" method="post">
     <table border="1" cellpadding="10">
       <tr>
+        <td>ID:</td>
+        <td><input type="text" th:field="*{nr_przystanku}" ></td>
+      </tr>
+      <tr>
         <td>Nazwa:</td>
-        <td><input type="text" th:field="*{nazwa}"></td>
+        <td><input type="text" th:field="*{nazwa_przystanku}"></td>
       </tr>
 
       <tr>
         <td>Lokalizacja X:</td>
-        <td><input type="text" th:field="*{lokalizacjaX}"></td>
+        <td><input type="text" th:field="*{czy_biletomat}"></td>
       </tr>
 
       <tr>
         <td>Lokalizacja Y:</td>
-        <td><input type="text" th:field="*{lokalizacjaY}"></td>
+        <td><input type="text" th:field="*{czy_wiata}"></td>
       </tr>
 
       <tr>
         <td>Rodzaj przystanku:</td>
-        <td><input type="text" th:field="*{rodzajPrzystanku}"></td>
+        <td><input type="text" th:field="*{rodzaj_przystanku}"></td>
       </tr>
 
       <tr>
         <td>ID bazy:</td>
-        <td><input type="text" th:field="*{idBazy}"></td>
+        <td><input type="text" th:field="*{czy_wiata}"></td>
+      </tr>
+      <tr>
+        <td>ID bazy:</td>
+        <td><input type="text" th:field="*{nr_zarzadu}"></td>
       </tr>
 
       <tr>
         <td colspan="2" align="center"><button type="submit">Zapisz</button></td>
+
       </tr>
     </table>
   </form>

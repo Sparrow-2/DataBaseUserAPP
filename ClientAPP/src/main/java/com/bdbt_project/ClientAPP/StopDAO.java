@@ -53,7 +53,7 @@ public class StopDAO {
     }
     public void update(Stop stop) {
 
-        String sql = "UPDATE PRZYSTANKI SET NAZWA_PRZYSTANKU=:Nazwa_przystanku, RODZAJ_PRZYSTANKU=:Rodzaj_przystanku, CZY_BILETOMAT=:Czy_biletomat,CZY_EKRAN=:Czy_ekran, CZY_WIATA=:Czy_wiata, NR_ZARZADU=:Nr_zarzadu WHERE NR_PRZYSTANKU=:Nr_przystanku";
+        String sql = "UPDATE PRZYSTANKI SET NAZWA_PRZYSTANKU=:Nazwa_przystanku,RODZAJ_PRZYSTANKU=:Rodzaj_przystanku, CZY_BILETOMAT=:Czy_biletomat,CZY_EKRAN=:Czy_ekran, CZY_WIATA=:Czy_wiata, NR_ZARZADU=:Nr_zarzadu WHERE NR_PRZYSTANKU=:Nr_przystanku";
         BeanPropertySqlParameterSource param = new BeanPropertySqlParameterSource(stop);
 
         NamedParameterJdbcTemplate template = new NamedParameterJdbcTemplate(jdbcTemplate);

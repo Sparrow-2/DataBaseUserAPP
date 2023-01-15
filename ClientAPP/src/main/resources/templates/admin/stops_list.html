@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <title>Lista przystanków</title>
@@ -55,7 +55,7 @@
 
 <div class="container">
     <div class="col-md-10 mt-5">
-        <a href="/new_stop">Dodaj nowy przystanek</a>
+
 
         <table border="1" cellpadding="10">
             <thead>
@@ -66,28 +66,31 @@
                 <th>Lokalizacja Y</th>
                 <th>Rodzaj przystanku</th>
                 <th>ID bazy</th>
+                <th>ID bazy</th>
                 <th>Operacja</th>
             </tr>
             </thead>
 
             <tbody>
             <tr th:each="przystanek : ${listPrzystanek}">
-                <td th:text="${przystanek.idPrzystanku}">ID</td>
-                <td th:text="${przystanek.nazwa}">Nazwa</td>
-                <td th:text="${przystanek.lokalizacjaX}">Lokalizacja X</td>
-                <td th:text="${przystanek.lokalizacjaY}">Lokalizacja Y</td>
-                <td th:text="${przystanek.rodzajPrzystanku}">Rodzaj przystanku</td>
-                <td th:text="${przystanek.idBazy}">ID bazy</td>
+                <td th:text="${przystanek.nr_przystanku}">ID</td>
+                <td th:text="${przystanek.nazwa_przystanku}">Nazwa</td>
+                <td th:text="${przystanek.rodzaj_przystanku}">Lokalizacja X</td>
+                <td th:text="${przystanek.czy_biletomat}">Lokalizacja Y</td>
+                <td th:text="${przystanek.czy_ekran}">Rodzaj przystanku</td>
+                <td th:text="${przystanek.czy_wiata}">ID bazy</td>
+                <td th:text="${przystanek.nr_zarzadu}">ID bazy</td>
                 <td>
-                    <a th:href="@{'/edit_stop/' + ${przystanek.idPrzystanku}}">Edytuj</a>
+                    <a th:href="@{'/edit_stop/' + ${przystanek.nr_przystanku}}">Edytuj</a>
                     &nbsp;&nbsp;&nbsp;&nbsp;
-                    <a th:href="@{'/delete_stop/' + ${przystanek.idPrzystanku}}">Usuń</a>
+                    <a th:href="@{'/delete_stop/' + ${przystanek.nr_przystanku}}">Usuń</a>
                 </td>
             </tr>
             </tbody>
         </table>
 
     </div>
+    <a href="/new_stop">Dodaj nowy przystanek</a>
 </div>
 
 </body>

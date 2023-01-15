@@ -157,6 +157,7 @@ public class AppController {
             return "admin/new_stop_form";
         }
 
+
         @RequestMapping(value = "/new_route")
         public String showNewRoutePage(Model model) {
             Trasy linia = new Trasy();
@@ -205,12 +206,12 @@ public class AppController {
             return "user/choose_route_type";
         }
 
-//        @RequestMapping(value="/savePrzystanek", method = RequestMethod.POST)
-//        public String saveStop(@ModelAttribute("przystanek") Stop przystanek) {
-//            daoStop.saveStop(przystanek);
-//
-//            return "redirect:/stops_list";
-//        }
+      @RequestMapping(value="/savePrzystanek", method = RequestMethod.POST)
+        public String saveStop(@ModelAttribute("przystanek") Stop przystanek) {
+            daoStop.save(przystanek);
+
+            return "redirect:/stops_list";
+        }
 
         //        @RequestMapping(value="/save_linia", method = RequestMethod.POST)
 //        public String saveLinia(@RequestParam boolean czyAktywna, @RequestParam char rodzajLinii, @RequestParam int idBazy) {
@@ -236,14 +237,17 @@ public class AppController {
             return mav;
         }
 
-//        @RequestMapping("/edit_stop/{idPrzystanku}")
-//        public ModelAndView showEditStopPage(@PathVariable(name = "idPrzystanku") int id) {
-//            ModelAndView mav = new ModelAndView("admin/edit_stop_form");
-//            Stop przystanek = daoStop.get(id);
-//            mav.addObject("przystanek", przystanek);
-//
-//            return mav;
-//        }
+      @RequestMapping("/edit_stop/{nr_przystanku}")
+       public ModelAndView showEditStopPage(@PathVariable(name = "nr_przystanku") int nr_przystanku) {
+           ModelAndView mav = new ModelAndView("admin/edit_stop_form");
+           Stop przystanek = daoStop.get(nr_przystanku);
+          mav.addObject("przystanek", przystanek);
+
+          return mav;
+      }
+
+
+
 
 //        @RequestMapping("/edit_route/{idLinii}")
 //        public ModelAndView showEditRoutePage(@PathVariable(name = "idLinii") int id) {
@@ -287,12 +291,12 @@ public class AppController {
 //        }
 //
 
-//        @RequestMapping(value="/update_stop", method = RequestMethod.POST)
-//        public String updateStop(@ModelAttribute("przystanek") Stop przystanek) {
-//            daoStop.update(przystanek);
-//
-//            return "redirect:/stops_list";
-//        }
+    @RequestMapping(value="/update_stop", method = RequestMethod.POST)
+       public String updateStop(@ModelAttribute("przystanek") Stop przystanek) {
+        daoStop.update(przystanek);
+
+        return "redirect:/stops_list";
+    }
 
 //        @RequestMapping(value="/update_route", method = RequestMethod.POST)
 //        public String updateRoute(@ModelAttribute("linia") Trasy linia) {
@@ -337,17 +341,16 @@ public class AppController {
 //            String idLiniiString = Integer.toString(idLinii);
 //            return "redirect:/inspect_route/" + idLiniiString;
 //        }
+      @RequestMapping(value={"/routes_management"})
+        public String showRoutesManagementPage(Model model) { return "admin/routes_management"; }
+//
+       @RequestMapping(value={"/stops_list"})
+     public String showStopsListPage(Model model) {
+            List<Stop> listPrzystanek = daoStop.list();
+          model.addAttribute("listPrzystanek", listPrzystanek);
 
-//        @RequestMapping(value={"/routes_management"})
-//        public String showRoutesManagementPage(Model model) { return "admin/routes_management"; }
-//
-//        @RequestMapping(value={"/stops_list"})
-//        public String showStopsListPage(Model model) {
-//            List<Stop> listPrzystanek = daoStop.list();
-//            model.addAttribute("listPrzystanek", listPrzystanek);
-//
-//            return "admin/stops_list";
-//        }
+            return "admin/stops_list";
+        }
 
 //        @RequestMapping(value={"/routes_list"})
 //        public String showRoutesListPage(Model model) {
