@@ -46,7 +46,7 @@
   <form action="#" th:action="@{/savePrzystanek}" th:object="${przystanek}" method="post">
     <table border="1" cellpadding="10">
       <tr>
-        <td>ID:</td>
+        <td>Numer przystanku</td>
         <td><input type="text" th:field="*{nr_przystanku}" ></td>
       </tr>
       <tr>
@@ -55,12 +55,12 @@
       </tr>
 
       <tr>
-        <td>Lokalizacja X:</td>
+        <td>Czy posiada biletomat</td>
         <td><input type="text" th:field="*{czy_biletomat}"></td>
       </tr>
 
       <tr>
-        <td>Lokalizacja Y:</td>
+        <td>Czy posiada wiatę</td>
         <td><input type="text" th:field="*{czy_wiata}"></td>
       </tr>
 
@@ -70,11 +70,11 @@
       </tr>
 
       <tr>
-        <td>ID bazy:</td>
-        <td><input type="text" th:field="*{czy_wiata}"></td>
+        <td>Czy posiada ekran</td>
+        <td><input type="text" th:field="*{czy_ekran}"></td>
       </tr>
       <tr>
-        <td>ID bazy:</td>
+        <td>Numer zarządu </td>
         <td><input type="text" th:field="*{nr_zarzadu}"></td>
       </tr>
 

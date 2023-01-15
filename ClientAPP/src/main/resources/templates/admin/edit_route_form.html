@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeLeaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Edycja linii</title>
+    <title>Edycja Trasy </title>
     <link th:rel="stylesheet" th:href="@{/webjars/bootstrap/4.0.0-2/css/bootstrap.min.css} "/>
 </head>
 <body>
@@ -39,30 +39,31 @@
 </nav>
 
 <div align="center">
-    <h1>Edytuj dane linii</h1>
+    <h1>Edytuj dane trasy </h1>
 
     <br/>
 
     <form action="#" th:action="@{/update_route}" th:object="${linia}" method="post">
         <table border="1" cellpadding="10">
             <tr>
-                <td>ID:</td>
-                <td><input type="text" th:field="*{idLinii}" readonly="readonly"></td>
+                <td>Numer trasy :</td>
+                <td><input type="text" th:field="*{Nr_trasy}" readonly="readonly"></td>
             </tr>
             <tr>
-                <td>Czy aktywna:</td>
-                <td><input type="text" th:field="*{czyAktywna}"></td>
+                <td> Długość : </td>
+            <td> <input type="text" th:field="*{Dlugosc}"></td>
+            </tr>
+            <tr>
+                <td>Przystanek początkowy :</td>
+                <td><input type="text" th:field="*{Przystanek_poczatkowy}"></td>
             </tr>
 
             <tr>
-                <td>Rodzaj linii:</td>
-                <td><input type="text" th:field="*{rodzajLinii}"></td>
+                <td>Przystanek końcowy :</td>
+                <td><input type="text" th:field="*{Przystanek_koncowy}"></td>
             </tr>
 
-            <tr>
-                <td>ID bazy:</td>
-                <td><input type="text" th:field="*{idBazy}"></td>
-            </tr>
+
             <tr>
                 <td colspan="2" align="center"><button type="submit">Zapisz</button></td>
             </tr>

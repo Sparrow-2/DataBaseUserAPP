@@ -5,16 +5,26 @@ public class Trasy {
     private int Dlugosc;
     private String Przystanek_poczatkowy;
     private String Przystanek_koncowy;
+    private int Nr_zarzadu;
 
     public Trasy(){
 
     }
 
-    public Trasy(int dlugosc, String przystanek_poczatkowy, String przystanek_koncowy) {
-        super();
-        this.Dlugosc = dlugosc;
-        this.Przystanek_poczatkowy = przystanek_poczatkowy;
-        this.Przystanek_koncowy = przystanek_koncowy;
+    public Trasy(int nr_trasy, int dlugosc, String przystanek_poczatkowy, String przystanek_koncowy, int nr_zarzadu) {
+        Nr_trasy = nr_trasy;
+        Dlugosc = dlugosc;
+        Przystanek_poczatkowy = przystanek_poczatkowy;
+        Przystanek_koncowy = przystanek_koncowy;
+        Nr_zarzadu = nr_zarzadu;
+    }
+
+    public int getNr_zarzadu() {
+        return Nr_zarzadu;
+    }
+
+    public void setNr_zarzadu(int nr_zarzadu) {
+        Nr_zarzadu = nr_zarzadu;
     }
 
     public int getNr_trasy() {
@@ -49,7 +59,6 @@ public class Trasy {
         Przystanek_koncowy = przystanek_koncowy;
     }
 
-
     @Override
     public String toString() {
         return "Trasy{" +
@@ -57,6 +66,7 @@ public class Trasy {
                 ", Dlugosc=" + Dlugosc +
                 ", Przystanek_poczatkowy='" + Przystanek_poczatkowy + '\'' +
                 ", Przystanek_koncowy='" + Przystanek_koncowy + '\'' +
+                ", Nr_zarzadu=" + Nr_zarzadu +
                 '}';
     }
 }

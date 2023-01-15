@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeLeaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Dodaj nową linie</title>
+    <title>Dodaj nową trasę</title>
     <link th:rel="stylesheet" th:href="@{/webjars/bootstrap/4.0.0-2/css/bootstrap.min.css} "/>
 </head>
 <body>
@@ -39,25 +39,33 @@
 </nav>
 
 <div align="center">
-    <h1>Dodaj nową linie</h1>
+    <h1>Dodaj nową trasę</h1>
 
     <br/>
 
     <form action="#" th:action="@{/save_linia}" th:object="${linia}" method="post">
         <table border="1" cellpadding="10">
             <tr>
-                <td>Czy aktywna:</td>
-                <td><input type="text" th:field="*{czyAktywna}"></td>
+                <td>Numer trasy </td>
+                <td><input type="text" th:field="*{Nr_trasy}"></td>
             </tr>
 
             <tr>
-                <td>Rodzaj linii:</td>
-                <td><input type="text" th:field="*{rodzajLinii}"></td>
+                <td>Długość </td>
+                <td><input type="text" th:field="*{Dlugosc}"></td>
             </tr>
 
             <tr>
-                <td>ID bazy:</td>
-                <td><input type="text" th:field="*{idBazy}"></td>
+                <td>Przystanek początkowy </td>
+                <td><input type="text" th:field="*{Przystanek_poczatkowy}"></td>
+            </tr>
+            <tr>
+                <td>Przystanek końcowy </td>
+                <td><input type="text" th:field="*{Przystanek_koncowy}"></td>
+            </tr>
+            <tr>
+                <td>Numer zarządu </td>
+                <td><input type="text" th:field="*{Nr_zarzadu}"></td>
             </tr>
 
             <tr>

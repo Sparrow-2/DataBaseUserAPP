@@ -213,21 +213,17 @@ public class AppController {
             return "redirect:/stops_list";
         }
 
-        //        @RequestMapping(value="/save_linia", method = RequestMethod.POST)
-//        public String saveLinia(@RequestParam boolean czyAktywna, @RequestParam char rodzajLinii, @RequestParam int idBazy) {
-//            System.out.println(czyAktywna);
-//            System.out.println(rodzajLinii);
-//            System.out.println(idBazy);
-//
-//            Trasy linia = new Trasy(czyAktywna, rodzajLinii, idBazy);
-//
-//            daoTrasy.saveTrasy(linia);
-//
-//            return "redirect:/routes_list";
-//        }
-//
+               @RequestMapping(value="/save_linia", method = RequestMethod.POST)
+   public String saveLinia(@ModelAttribute("trasy") Trasy trasy) {
+         daoTrasy.save(trasy);
+
+       return "redirect:/routes_list";
+   }
+
+
 
         @RequestMapping("/edit_user_data/{Nr_klienta}")
+
         public ModelAndView showEditUserDataPage(@PathVariable(name = "Nr_klienta") int Nr_klienta) {
             ModelAndView mav = new ModelAndView("user/edit_user_data_form");
 
@@ -249,14 +245,14 @@ public class AppController {
 
 
 
-//        @RequestMapping("/edit_route/{idLinii}")
-//        public ModelAndView showEditRoutePage(@PathVariable(name = "idLinii") int id) {
-//            ModelAndView mav = new ModelAndView("admin/edit_route_form");
-//            Trasy linia = daoTrasy.get(id);
-//            mav.addObject("linia", linia);
-//
-//            return mav;
-//        }
+       @RequestMapping("/edit_route/{Nr_trasy}")
+  public ModelAndView showEditRoutePage(@PathVariable(name = "Nr_trasy") int Nr_trasy) {
+          ModelAndView mav = new ModelAndView("admin/edit_route_form");
+     Trasy linia = daoTrasy.get(Nr_trasy);
+     mav.addObject("linia", linia);
+
+         return mav;
+           }
 
 //        @RequestMapping("/inspect_route/{idLinii}")
 //        public ModelAndView showInspectRoutePage(Model model, @PathVariable(name = "idLinii") int id) {
@@ -298,21 +294,21 @@ public class AppController {
         return "redirect:/stops_list";
     }
 
-//        @RequestMapping(value="/update_route", method = RequestMethod.POST)
-//        public String updateRoute(@ModelAttribute("linia") Trasy linia) {
-//            daoTrasy.update(linia);
-//
-//            return "redirect:/routes_list";
-//        }
+      @RequestMapping(value="/update_route", method = RequestMethod.POST)
+     public String updateRoute(@ModelAttribute("linia") Trasy linia) {
+         daoTrasy.update(linia);
 
-        //        @RequestMapping(value = "/update_user_data", method = RequestMethod.POST)
-//        public String updateUserData(@ModelAttribute("klient") Klient klient) {
-//            daoKlient.update(klient);
-//
-//            String idString = Integer.toString(klient.getIdKlienta());
-//
-//            return "redirect:/main_user/" + idString;
-//        }
+    return "redirect:/routes_list";
+   }
+
+              @RequestMapping(value = "/update_user_data", method = RequestMethod.POST)
+  public String updateUserData(@ModelAttribute("klient") Klient klient) {
+         daoKlient.update(klient);
+
+
+
+    return "redirect:/main_user/" + '3';
+       }
 //
         @RequestMapping("/delete/{Nr_pracownika}")
         public String deleteEmp(@PathVariable(name = "Nr_pracownika") int Nr_pracownika) {
@@ -352,13 +348,13 @@ public class AppController {
             return "admin/stops_list";
         }
 
-//        @RequestMapping(value={"/routes_list"})
-//        public String showRoutesListPage(Model model) {
-//            List<Trasy> listLinia = daoTrasy.list();
-//            model.addAttribute("listLinia", listLinia);
-//
-//            return "admin/routes_list";
-//        }
+      @RequestMapping(value={"/routes_list"})
+     public String showRoutesListPage(Model model) {
+        List<Trasy> listLinia = daoTrasy.list();
+           model.addAttribute("listLinia", listLinia);
+
+           return "admin/routes_list";
+     }
 //
 //        @RequestMapping(value={"/vehicles_management"})
 //        public String showVehiclesManagementPage(Model model) { return "admin/vehicles_management"; }

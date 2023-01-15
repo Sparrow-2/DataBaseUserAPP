@@ -50,7 +50,8 @@ public class TrasyDAOTest {
     @Test
     void testUpdate() {
         Trasy trasy = new Trasy();
-        trasy.setNr_trasy(1);
+        trasy.setNr_trasy(100);
+        trasy.setNr_zarzadu(1);
         trasy.setDlugosc(3);
         trasy.setPrzystanek_koncowy("MŁOCINY");
         trasy.setPrzystanek_poczatkowy("STARE BIELANY");

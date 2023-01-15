@@ -31,7 +31,7 @@ public class TrasyDAO {
 
     public void save(Trasy trasy) {
         SimpleJdbcInsert insertActor = new SimpleJdbcInsert(jdbcTemplate);
-        insertActor.withTableName("TRASY").usingColumns("NR_TRASY", "DLUGOSC","PRZYSTANEK_POCZATKOWY","PRZYSTANEK_KONCOWY");
+        insertActor.withTableName("TRASY").usingColumns("NR_TRASY", "DLUGOSC","PRZYSTANEK_POCZATKOWY","PRZYSTANEK_KONCOWY","NR_ZARZADU");
 
 
         BeanPropertySqlParameterSource param = new BeanPropertySqlParameterSource(trasy);

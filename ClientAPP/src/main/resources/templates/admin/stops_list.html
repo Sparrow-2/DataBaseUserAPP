@@ -60,26 +60,26 @@
         <table border="1" cellpadding="10">
             <thead>
             <tr>
-                <th>ID</th>
+                <th>Numer przystanku</th>
                 <th>Nazwa</th>
-                <th>Lokalizacja X</th>
-                <th>Lokalizacja Y</th>
                 <th>Rodzaj przystanku</th>
-                <th>ID bazy</th>
-                <th>ID bazy</th>
+                <th>Czy posiada biletomat</th>
+                <th>Czy posiada ekran</th>
+                <th>Czy posiada wiatę</th>
+                <th>Numer zarządu </th>
                 <th>Operacja</th>
             </tr>
             </thead>
 
             <tbody>
             <tr th:each="przystanek : ${listPrzystanek}">
-                <td th:text="${przystanek.nr_przystanku}">ID</td>
+                <td th:text="${przystanek.nr_przystanku}">Numer przystanku</td>
                 <td th:text="${przystanek.nazwa_przystanku}">Nazwa</td>
-                <td th:text="${przystanek.rodzaj_przystanku}">Lokalizacja X</td>
-                <td th:text="${przystanek.czy_biletomat}">Lokalizacja Y</td>
-                <td th:text="${przystanek.czy_ekran}">Rodzaj przystanku</td>
-                <td th:text="${przystanek.czy_wiata}">ID bazy</td>
-                <td th:text="${przystanek.nr_zarzadu}">ID bazy</td>
+                <td th:text="${przystanek.rodzaj_przystanku}">Rodzaj przystanku</td>
+                <td th:text="${przystanek.czy_biletomat}">Czy posiada biletomat</td>
+                <td th:text="${przystanek.czy_ekran}">Czy posiada ekran</td>
+                <td th:text="${przystanek.czy_wiata}">Czy posiada wiatę</td>
+                <td th:text="${przystanek.nr_zarzadu}">Numer zarządu</td>
                 <td>
                     <a th:href="@{'/edit_stop/' + ${przystanek.nr_przystanku}}">Edytuj</a>
                     &nbsp;&nbsp;&nbsp;&nbsp;

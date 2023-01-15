@@ -46,32 +46,52 @@
     <form action="#" th:action="@{/update_user_data}" th:object="${klient}" method="post">
         <table border="1" cellpadding="10">
             <tr>
-                <td>ID:</td>
-                <td><input type="text" th:field="*{idKlienta}" readonly="readonly"></td>
+                <td>Numer klienta </td>
+                <td><input type="text" th:field="*{Nr_klienta}" readonly="readonly"></td>
             </tr>
             <tr>
                 <td>Imię:</td>
-                <td><input type="text" th:field="*{imie}" readonly="readonly"></td>
+                <td><input type="text" th:field="*{Imie_klienta}" ></td>
             </tr>
 
             <tr>
                 <td>Nazwisko:</td>
-                <td><input type="text" th:field="*{nazwisko}" readonly="readonly"></td>
+                <td><input type="text" th:field="*{Nazwisko_klienta}" ></td>
+            </tr>
+            <tr>
+                <td>Płeć:</td>
+                <td><input type="text" th:field="*{Plec_klienta}"> </td>
             </tr>
 
             <tr>
                 <td>PESEL:</td>
-                <td><input type="text" th:field="*{PESEL}" readonly="readonly"></td>
+                <td><input type="text" th:field="*{PESEL_klienta}" readonly="readonly"></td>
             </tr>
 
             <tr>
                 <td>E-mail:</td>
-                <td><input type="text" th:field="*{email}" readonly="readonly"></td>
+                <td><input type="text" th:field="*{Email_klienta}" ></td>
+            </tr>
+            <tr>
+                <td>Data urodzenia : </td>
+                <td><input type="text" th:field="*{Data_urodzenia_klienta}" readonly="readonly"></td>
             </tr>
 
             <tr>
                 <td>Telefon:</td>
-                <td><input type="text" th:field="*{telefon}"></td>
+                <td><input type="text" th:field="*{Nr_telefonu_klienta}"></td>
+            </tr>
+            <tr>
+                <td>Numer zarzadu</td>
+                <td><input type="text" th:field="*{Nr_zarzadu}"></td>
+            </tr>
+            <tr>
+                <td>Numer adresu :</td>
+                <td><input type="text" th:field="*{Nr_adresu}"></td>
+            </tr>
+            <tr>
+                <td>Numer poczty </td>
+                <td><input type="text" th:field="*{Nr_poczty}"></td>
             </tr>
 
             <tr>
