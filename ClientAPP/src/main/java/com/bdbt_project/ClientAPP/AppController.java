@@ -56,21 +56,20 @@ public class AppController {
     }
 
     @Controller
-    public class DashboardController
-    {
+    public class DashboardController {
         @RequestMapping("/")
-        public String viewHomePage(Model model){
+        public String viewHomePage(Model model) {
 
             return "index";
         }
 
         @RequestMapping("/login")
-        public String showLogin(Model model){
+        public String showLogin(Model model) {
             return "login";
         }
 
         @RequestMapping("/index")
-        public String showIndex(Model model){
+        public String showIndex(Model model) {
             return "index";
         }
 
@@ -86,18 +85,16 @@ public class AppController {
             (request.isUserInRole
                     ("ADMIN")) {
                 return "redirect:/main_admin";
-            }
-            else if
+            } else if
             (request.isUserInRole
                             ("USER")) {
                 return "redirect:/main_user/1";
-            }
-            else
-            {
+            } else {
                 return "redirect:/index";
             }
         }
-        @RequestMapping(value={"/main_admin"})
+
+        @RequestMapping(value = {"/main_admin"})
         public String showAdminPage(Model model) {
 
             return "admin/main_admin";
@@ -114,7 +111,7 @@ public class AppController {
             return mav;
         }
 
-        @RequestMapping(value={"/emp_management"})
+        @RequestMapping(value = {"/emp_management"})
         public String showEmpManagementPage(Model model) {
             List<Pracownicy> listPracownicy = daoPracownicy.list();
             model.addAttribute("listPracownicy", listPracownicy);
@@ -122,20 +119,44 @@ public class AppController {
         }
 
 
-        @RequestMapping(value={"/new"})
+        @RequestMapping(value = {"/new"})
         public String showNewEmpPage(Model model) {
             Pracownicy pracownicy = new Pracownicy();
             model.addAttribute("pracownicy", pracownicy);
             return "admin/new_form";
         }
 
-      @RequestMapping(value = "/new_stop")
+        @RequestMapping(value = "/save", method = RequestMethod.POST)
+        public String saveEmp(@ModelAttribute("pracownicy") Pracownicy pracownicy) {
+            daoPracownicy.save(pracownicy);
+
+            return "redirect:/emp_management";
+        }
+
+        @RequestMapping("/edit/{Nr_pracownika}")
+        public ModelAndView showEditEmpPage(@PathVariable(name = "Nr_pracownika") int nr_pracownika) {
+            ModelAndView mav = new ModelAndView("admin/edit_form");
+            Pracownicy pracownicy = daoPracownicy.get(nr_pracownika);
+            mav.addObject("pracownicy", pracownicy);
+
+            return mav;
+        }
+
+        @RequestMapping(value="/update", method = RequestMethod.POST)
+        public String updateEmp(@ModelAttribute("pracownik") Pracownicy pracownicy) {
+            daoPracownicy.update(pracownicy);
+
+            return "redirect:/emp_management";
+        }
+
+        @RequestMapping(value = "/new_stop")
         public String showNewStopPage(Model model) {
             Stop przystanek = new Stop();
             model.addAttribute("przystanek", przystanek);
 
             return "admin/new_stop_form";
         }
+
         @RequestMapping(value = "/new_route")
         public String showNewRoutePage(Model model) {
             Trasy linia = new Trasy();
@@ -177,14 +198,7 @@ public class AppController {
 //            daoKolejnosci.saveKolejnosci(przystanek);
 //
 //            return "redirect:/inspect_route/{idLinii}";
-        }
 
-
-        @RequestMapping(value="/save", method = RequestMethod.POST)
-        public String saveEmp(@ModelAttribute("pracownicy") Pracownicy pracownicy){
-        daoPracownicy.save(pracownicy);
-        return "redirect:/emp_management";
-        }
 
         @RequestMapping(value = "/choose_route_type")
         public String showChooseRouteTypePage() {
@@ -198,7 +212,7 @@ public class AppController {
 //            return "redirect:/stops_list";
 //        }
 
-//        @RequestMapping(value="/save_linia", method = RequestMethod.POST)
+        //        @RequestMapping(value="/save_linia", method = RequestMethod.POST)
 //        public String saveLinia(@RequestParam boolean czyAktywna, @RequestParam char rodzajLinii, @RequestParam int idBazy) {
 //            System.out.println(czyAktywna);
 //            System.out.println(rodzajLinii);
@@ -211,14 +225,6 @@ public class AppController {
 //            return "redirect:/routes_list";
 //        }
 //
-        @RequestMapping("/edit/{Nr_pracownika}")
-        public ModelAndView showEditEmpPage(@PathVariable(name = "Nr_pracownika") int Nr_pracownika) {
-            ModelAndView mav = new ModelAndView("admin/edit_form");
-            Pracownicy pracownicy = daoPracownicy.get(Nr_pracownika);
-            mav.addObject("pracownicy", pracownicy);
-
-            return mav;
-        }
 
         @RequestMapping("/edit_user_data/{Nr_klienta}")
         public ModelAndView showEditUserDataPage(@PathVariable(name = "Nr_klienta") int Nr_klienta) {
@@ -280,12 +286,6 @@ public class AppController {
 //            return "user/routes_list_type";
 //        }
 //
-        @RequestMapping(value="/update", method = RequestMethod.POST)
-        public String updateEmp(@ModelAttribute("pracownik") Pracownicy pracownicy) {
-            daoPracownicy.update(pracownicy);
-
-            return "redirect:/emp_management";
-        }
 
 //        @RequestMapping(value="/update_stop", method = RequestMethod.POST)
 //        public String updateStop(@ModelAttribute("przystanek") Stop przystanek) {
@@ -301,7 +301,7 @@ public class AppController {
 //            return "redirect:/routes_list";
 //        }
 
-//        @RequestMapping(value = "/update_user_data", method = RequestMethod.POST)
+        //        @RequestMapping(value = "/update_user_data", method = RequestMethod.POST)
 //        public String updateUserData(@ModelAttribute("klient") Klient klient) {
 //            daoKlient.update(klient);
 //
@@ -360,7 +360,7 @@ public class AppController {
 //        @RequestMapping(value={"/vehicles_management"})
 //        public String showVehiclesManagementPage(Model model) { return "admin/vehicles_management"; }
 
-
+    }
     }
 
 

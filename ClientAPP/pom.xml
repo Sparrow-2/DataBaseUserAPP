@@ -79,7 +79,7 @@
 			<artifactId>ojdbc11</artifactId>
 			<version>1.0</version>
 			<scope>system</scope>
-			<systemPath>/home/tomek/Downloads/ojdbc11.jar	</systemPath>
+			<systemPath>C:/Studia/Semestr 3/Bazy danych i Big Data/BDBT-proj/ojdbc11.jar	</systemPath>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
