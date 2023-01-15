@@ -17,7 +17,7 @@ public class Pracownicy {
     private String Nr_telefonu_pracownika;
     private String Email_pracownika;
     private Timestamp Data_urodzenia_pracownika;
-    private Timestamp Data_zatrudnienia_pracownika;
+    private Timestamp Data_zatrudnienia;
     private Timestamp Data_badania;
     private Timestamp Data_waznosci_badan;
     private int Nr_zarzadu;
@@ -38,7 +38,7 @@ public class Pracownicy {
         this.Nr_telefonu_pracownika = nr_telefonu_pracownika;
         this.Email_pracownika = email_pracownika;
         this.Data_urodzenia_pracownika = data_urodzenia_pracownika;
-        this.Data_zatrudnienia_pracownika = data_zatrudnienia_pracownika;
+        this.Data_zatrudnienia = data_zatrudnienia_pracownika;
         this.Data_badania = data_badania;
         this.Data_waznosci_badan = data_waznosci_badan;
         this.Nr_zarzadu = nr_zarzadu;
@@ -119,12 +119,12 @@ public class Pracownicy {
         Data_urodzenia_pracownika = data_urodzenia_pracownika;
     }
 
-    public Timestamp getData_zatrudnienia_pracownika() {
-        return Data_zatrudnienia_pracownika;
+    public Timestamp getData_zatrudnienia() {
+        return Data_zatrudnienia;
     }
 
-    public void setData_zatrudnienia_pracownika(Timestamp data_zatrudnienia_pracownika) {
-        Data_zatrudnienia_pracownika = data_zatrudnienia_pracownika;
+    public void setData_zatrudnienia(Timestamp data_zatrudnienia_pracownika) {
+        Data_zatrudnienia = data_zatrudnienia_pracownika;
     }
 
     public Timestamp getData_badania() {
@@ -187,7 +187,7 @@ public class Pracownicy {
                 ", Nr_telefonu_pracownika='" + Nr_telefonu_pracownika + '\'' +
                 ", Email_pracownika='" + Email_pracownika + '\'' +
                 ", Data_urodzenia_pracownika=" + Data_urodzenia_pracownika +
-                ", Data_zatrudnienia_pracownika=" + Data_zatrudnienia_pracownika +
+                ", Data_zatrudnienia_pracownika=" + Data_zatrudnienia +
                 ", Data_badania=" + Data_badania +
                 ", Data_waznosci_badan=" + Data_waznosci_badan +
                 ", Nr_zarzadu=" + Nr_zarzadu +

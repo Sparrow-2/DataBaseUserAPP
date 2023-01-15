@@ -179,11 +179,11 @@ public class AppController {
 //            return "redirect:/inspect_route/{idLinii}";
         }
 
-        @RequestMapping(value="/save", method = RequestMethod.POST)
-        public String saveEmp(@ModelAttribute("pracownicy") Pracownicy pracownicy) {
-            daoPracownicy.save(pracownicy);
 
-            return "redirect:/emp_management";
+        @RequestMapping(value="/save", method = RequestMethod.POST)
+        public String saveEmp(@ModelAttribute("pracownicy") Pracownicy pracownicy){
+        daoPracownicy.save(pracownicy);
+        return "redirect:/emp_management";
         }
 
         @RequestMapping(value = "/choose_route_type")

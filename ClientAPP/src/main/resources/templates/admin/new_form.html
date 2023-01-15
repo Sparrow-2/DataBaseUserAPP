@@ -45,6 +45,8 @@
 
     <form action="#" th:action="@{/save}" th:object="${pracownicy}" method="post">
         <table border="1" cellpadding="10">
+
+
             <tr>
                 <td>Imie:</td>
                 <td><input type="text" th:field="*{Imie_pracownika}"></td>
@@ -86,7 +88,7 @@
             </tr>
             <tr>
                 <td>Data zatrudnienia </td>
-                <td><input type="text" th:field="*{Data_zatrudnienia_pracownika}"></td>
+                <td><input type="text" th:field="*{Data_zatrudnienia}"></td>
             </tr>
 
             <tr>
@@ -117,10 +119,10 @@
 
 
             <tr>
-                <a th:href="@{/save}">
-                    <button class="btn btn-outline-">Zapisz pracownika </button>
-                </a>
+            <tr>
+                <td colspan="2" align="center"><button type="submit">Zapisz</button></td>
             </tr>
+
         </table>
     </form>
 </div>

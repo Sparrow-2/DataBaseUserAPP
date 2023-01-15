@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Zarządzanie pracownikami</title>
@@ -86,7 +86,7 @@
                 <td th:text="${pracownicy.Nr_telefonu_pracownika}">Nr telefonu</td>
                 <td th:text="${pracownicy.Email_pracownika}">E-mail</td>
                 <td th:text="${pracownicy.Data_urodzenia_pracownika}">Data urodzenia</td>
-                <td th:text="${pracownicy.Data_zatrudnienia_pracownika}">Data zatrudnienia</td>
+                <td th:text="${pracownicy.Data_zatrudnienia}">Data zatrudnienia</td>
                 <td th:text="${pracownicy.Data_badania}">Data badania</td>
                 <td th:text="${pracownicy.Data_waznosci_badan}">Data waznosci badan</td>
                 <td th:text="${pracownicy.Nr_zarzadu}">Nr zarządu</td>
@@ -101,9 +101,8 @@
             </tr>
             </tbody>
         </table>
-        <a th:href="@{/new}">
-            <button class="btn btn-outline-">Dodaj pracownikow </button>
-        </a>
+
+        <a href="/new">Dodaj nowego pracownika</a>
     </div>
 </div>
 
