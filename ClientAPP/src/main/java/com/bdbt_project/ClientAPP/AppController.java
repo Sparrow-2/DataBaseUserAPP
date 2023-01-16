@@ -302,6 +302,26 @@ public class AppController {
            return "admin/routes_list";
      }
 
+        @RequestMapping(value = {"/my_tickets"})
+        public String showMyTickets(Model model) {
+            List<Bilety> listaMoichBiletow = daoBilety.getUserTickets();
+            model.addAttribute("listaMoichBiletow", listaMoichBiletow);
+            return "user/ticket_list";
+        }
+        @RequestMapping(value = {"/new_ticket_form"})
+        public String NewTicket(Model model) {
+            Bilety bilety = new Bilety();
+            model.addAttribute("bilety", bilety);
+            return "user/new_ticket_form";
+
+        }
+
+        @RequestMapping(value = {"/save_ticket"}, method = RequestMethod.POST)
+        public String saveTic(@ModelAttribute("bilety") Bilety bilety) {
+            daoBilety.save(bilety);
+            return "redirect:/my_tickets";
+        }
+
 
     }
     }

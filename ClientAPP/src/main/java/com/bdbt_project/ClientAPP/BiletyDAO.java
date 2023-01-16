@@ -28,10 +28,18 @@ public class BiletyDAO {
 
         return listBilety;
     }
+    public List<Bilety> getUserTickets()  {
+
+        String sql = "SELECT * FROM BILETY WHERE NR_KLIENTA  = 3";
+
+        List<Bilety> listUserTickets = jdbcTemplate.query(sql,BeanPropertyRowMapper.newInstance(Bilety.class));
+        return listUserTickets;
+
+    }
 
     public void save(Bilety bilety) {
         SimpleJdbcInsert insertActor = new SimpleJdbcInsert(jdbcTemplate);
-        insertActor.withTableName("BILETY").usingColumns("NR_BILETU", "RODZAJ_BILETU","CZAS_SKASOWANIA","KONIEC_WAZNOSCI",
+        insertActor.withTableName("BILETY").usingColumns("NR_BILETU", "RODZAJ_BILETU",
                 "CZY_ULGOWY", "CENA","NR_ZARZADU","NR_KLIENTA");
 
 
