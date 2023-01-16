@@ -2,12 +2,15 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Lista linii</title>
+  <title>Lista tras</title>
 
   <link th:rel="stylesheet" th:href="@{/webjars/bootstrap/4.0.0-2/css/bootstrap.min.css} "/>
 
 </head>
 <body>
+<style type="text/css">body, a, a:hover {cursor: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAAAXNSR0IArs4c6QAAAwpJREFUeF5jZBjhgHGE+59hNABGU8AID4HRLDDCE8BoITiaBUazwAgPgdEsMMITwGgtMJoFRrPACA+B0SxAbAKo3eT8H6T2/38wRTXQ4r+PpEio2eiE1QFMjExgNzX57SHJPKIVj4gA+P/////aTc5YY1deSolqsT6QBnGzCYGtj9LvAkc+SgoY8QEAChGXqBSiMrmAiNhARiTJdrvHvkLRk2o6BzMFjAYAAwMD08zHeFOA9Yl+cEgetSjEGgtqMpA8hg50draCha64V5MUe5Tqg1lGdAoYsQHQfAwS8/WX8UcQoRSArluYjxMsZH+8b3CngBEfAISSPixmSU0BMH1OBxvBzH329WAaV1lB7bKD6DJgNAAIlP6wGCSpCCdDMbXbF8wskErNJfI1imsw2gGEUsCIDQC5l+fBIadyYxMZ8Um+FgFhUYhmRqL7a1gtQ6//YYqITgEjJgBk6tejtAAl3lwHB5bA+3tg2iIcQsPAp5fCYCaf+Fvyo5kEnYzQfhvLD02wLimlHyToRij1qt8C5khve4HaFxjxAXD/8VNwCph5Ih4cQrDSk5EJkjBOroKMB/ALQ3qBvs62YPrMZUhKef7qDZjWcD5BVszg0nT7mCRY6u93eTDt72IPpjfuOYiiBVdeRzeX9ftvsFCC3ULUFDDiA+D12/fgqJ54JBhrZJxYCUkB3p6eYFpBCnU8YPcRSMwL6O4E00zM/6iSEgjZC7Nk6cbtKCmQ0AgWRi0w0gIgxWQ2OMDglSyu0VZYCKPHBEwclhLevv8IFrr1azqYZuP+TpMUgG4vrhSAbnmqzUSwkLywLkrDYjQAiI0m2FghrAxA13f09Fmw0JpJbZQ13dAMJtbextwUsE5tVSWS7CdaMbEOGbYBAIsYXKPGe5ZBRllpBXDZq6oIaR9Mb60ly36SNY34AKBVDA+UuSSngIFyKK3sHQ0AWoXsUDF3NAUMlZiilTtHUwCtQnaomDuaAoZKTNHKnaMpgFYhO1TMHU0BQyWmaOXO0RRAq5AdKuaOpoChElO0cicAZtqGTK8+uksAAAAASUVORK5CYII=) 4 22, default;}</style>
+
+<script data-style="modern" data-speed="2000" data-position="rm" data-size="78" data-arrowtype="ar2" data-bgcolor="rgb(115,198,42)" src="http://profilki.pl/scr/uparrow.js"></script>
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
   <div class="container">
@@ -31,7 +34,7 @@
         </li>
 
         <li class="nav-item">
-          <a class="nav-link" th:inline="text" style="color:lightskyblue;">You are logged in as <b
+          <a class="nav-link" th:inline="text" style="color:lightskyblue;">Jesteś zalogowany jako <b
                   style="text-transform:capitalize">[[${#httpServletRequest.remoteUser}]]</b></a>
         </li>
 
@@ -45,8 +48,8 @@
   <div class="row">
     <div class="col-md-10 mt-5">
 
-      <label style="font-size:30px">Zarządzanie liniami</label>
-      <div style="font-size:20px">Edytowanie danych związanych z liniami
+      <label style="font-size:30px">Zarządzanie trasami</label>
+      <div style="font-size:20px">Edytowanie danych związanych z trasami
       </div>
 
     </div>
@@ -55,26 +58,25 @@
 
 <div class="container">
   <div class="col-md-10 mt-5">
-    <a href="/new_route">Dodaj nową linie</a>
+    <a href="/new_route">Dodaj nową trasę</a>
 
     <table border="1" cellpadding="10">
       <thead>
       <tr>
-        <th>ID</th>
-        <th>Czy aktywna</th>
-        <th>Rodzaj linii</th>
-        <th>ID bazy</th>
-        <th>Operacja</th>
+        <th>Nr trasy</th>
+        <th>Długość</th>
+        <th>Przystanek początkowy</th>
+        <th>Przystanek końcowy</th>
       </tr>
       </thead>
 
       <tbody>
       <tr th:each="linia : ${listLinia}">
 
-        <td th:text="${linia.Nr_trasy}">Czy aktywna</td>
-        <td th:text="${linia.Dlugosc}">Czy aktywna</td>
-        <td th:text="${linia.Przystanek_poczatkowy}">Rodzaj linii</td>
-        <td th:text="${linia.Przystanek_koncowy}">ID Bazy</td>
+        <td th:text="${linia.Nr_trasy}">Nr trasy</td>
+        <td th:text="${linia.Dlugosc}">Długość</td>
+        <td th:text="${linia.Przystanek_poczatkowy}">Przystanek początkowy</td>
+        <td th:text="${linia.Przystanek_koncowy}">Przystanek końcowy</td>
         <td>
           <a th:href="@{'/edit_route/' + ${linia.Nr_trasy}}">Edytuj</a>
           &nbsp;&nbsp;&nbsp;&nbsp;
