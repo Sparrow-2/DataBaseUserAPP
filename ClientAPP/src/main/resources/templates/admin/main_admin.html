@@ -33,12 +33,12 @@
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" th:inline="text" style="color:lightskyblue;">Jesteś zalogowany jako <b
+                    <a class="nav-link" th:inline="text" style="color:#95b535;">Jesteś zalogowany jako <b
                             style="text-transform:capitalize">[[${#httpServletRequest.remoteUser}]]</b></a>
                 </li>
                 <form method="post" th:action="@{/index}">
 
-                    <button class="btn btn-primary" type="submit" onclick="successfullyLogout()" value="Sign Out">Wyloguj się
+                    <button class="btn btn-brand" type="submit" onclick="successfullyLogout()" value="Sign Out" style="background-color:#95b535">Wyloguj się
                     </button>
                 </form>
             </ul>
@@ -53,7 +53,7 @@
             <form method="post" th:action="@{/index}">
                 <div class="form-group">
                     <label style="font-size:30px" th:inline="text">Witaj <a
-                            style="color:lightskyblue; text-transform:capitalize"><b>[[${#httpServletRequest.remoteUser}]]</b></a>
+                            style="color:#95b535; text-transform:capitalize"><b>[[${#httpServletRequest.remoteUser}]]</b></a>
                         !</label>
                 </div>
 
@@ -70,7 +70,7 @@
 </div>
 <br>
 <div class="container">
-    <a th:href="@{/routes_list}">
+    <a th:href="@{/routes_stops}">
         <button class="btn btn-outline-">Zarządzaj ofertą</button>
     </a>
 </div>
