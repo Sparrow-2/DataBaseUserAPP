@@ -334,8 +334,8 @@ public class AppController {
 
             bilety.setRodzaj_biletu("KWARTALNY");
             bilety.setCzy_ulgowy(false);
-            Instant instant = Instant.now();
-            Date date = new Date();
+
+
 
 
 
