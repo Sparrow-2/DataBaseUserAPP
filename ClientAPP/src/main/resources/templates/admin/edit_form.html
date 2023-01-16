@@ -50,7 +50,7 @@
         <table border="1" cellpadding="10">
 
             <tr>
-                <td>Numer pracownika</td>
+                <td>Numer pracownika:</td>
                 <td><input type="text" th:field="*{Nr_pracownika}" readonly="readonly"></td>
             </tr>
 
@@ -77,7 +77,7 @@
 
             <tr>
                 <td>Płeć:</td>
-                <td><input type="text" th:field="*{Plec_pracownika}"></td>
+                <td><input type="text" th:field="*{Plec_pracownika}"><div class="row"><div class="offset-lg-1">Proszę wpisać K lub M.</div></div></td>
             </tr>
 
             <tr>
@@ -129,7 +129,8 @@
             <tr>
 
             <tr>
-                <td colspan="2" align="center"><button type="submit">Zapisz</button></td>
+                <td colspan="2" align="center"><button type="submit" onclick="successfullyEdited()">Zapisz</button><a class="btn btn-outline-brand ms-sm-2" th:href="@{/emp_management}">Anuluj</a></td>
+
             </tr>
         </table>
     </form>

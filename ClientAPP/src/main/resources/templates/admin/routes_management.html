@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Zarządzanie trasami</title>
+    <title>Zarządzanie ofertą</title>
     <link th:rel="stylesheet" th:href="@{/webjars/bootstrap/4.0.0-2/css/bootstrap.min.css} "/>
 </head>
 <body>
@@ -35,7 +35,11 @@
                     <a class="nav-link" th:inline="text" style="color:lightskyblue;">Jesteś zalogowany jako <b
                             style="text-transform:capitalize">[[${#httpServletRequest.remoteUser}]]</b></a>
                 </li>
+                <form method="post" th:action="@{/index}">
 
+                    <button class="btn btn-primary" type="submit" onclick="successfullyLogout()" value="Sign Out">Wyloguj się
+                    </button>
+                </form>
             </ul>
         </div>
     </div>
@@ -46,7 +50,7 @@
         <div class="col-md-10 mt-5">
 
             <label style="font-size:30px">Zarządzanie trasami</label>
-            <div style="font-size:20px">Wybierz czym chcesz zarządzać
+            <div style="font-size:20px">Wybierz czym chcesz zarządzać.
             </div>
 
         </div>

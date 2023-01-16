@@ -35,6 +35,7 @@ public class BiletyDAOTest {
     void testSave() {
         Bilety bilety = new Bilety();
         bilety.setNr_biletu(10);
+        bilety.setNr_klienta(3);
         bilety.setCena((float) 3.8);
         bilety.setNr_zarzadu(1);
         bilety.setCzas_skasowania(Timestamp.valueOf("2023-01-03 13:00:00"));
@@ -46,7 +47,7 @@ public class BiletyDAOTest {
     }
     @Test
     void testGet() {
-        int nr_biletu = 1;
+        int nr_biletu = 10;
 
         Bilety bilety = dao.get(nr_biletu);
         assertNotNull(bilety);
@@ -55,8 +56,9 @@ public class BiletyDAOTest {
     @Test
     void testUpdate() {
         Bilety bilety = new Bilety();
-        bilety.setNr_biletu(1);
-        bilety.setCena((float) 3.8);
+        bilety.setNr_biletu(10);
+        bilety.setNr_klienta(3);
+        bilety.setCena((float) 3.9);
         bilety.setNr_zarzadu(1);
         bilety.setCzas_skasowania(Timestamp.valueOf("2023-01-03 13:00:00"));
         bilety.setCzy_ulgowy(true);
@@ -68,6 +70,6 @@ public class BiletyDAOTest {
     @Test
     void testDelete() {
 
-        dao.delete(1);
+        dao.delete(10);
     }
 }

@@ -59,22 +59,22 @@
 
       <tr>
         <td>Czy posiada biletomat</td>
-        <td><input type="text" th:field="*{czy_biletomat}"></td>
+        <td><input type="text" th:field="*{czy_biletomat}"><div class="row"><div class="offset-lg-1">Proszę wpisać true lub false.</div></div></td>
       </tr>
 
       <tr>
         <td>Czy posiada wiatę</td>
-        <td><input type="text" th:field="*{czy_wiata}"></td>
+        <td><input type="text" th:field="*{czy_wiata}"><div class="row"><div class="offset-lg-1">Proszę wpisać true lub false.</div></div></td>
       </tr>
 
       <tr>
         <td>Rodzaj przystanku:</td>
-        <td><input type="text" th:field="*{rodzaj_przystanku}"></td>
+        <td><input type="text" th:field="*{rodzaj_przystanku}"><div class="row"><div class="offset-lg-1">Proszę wpisać A lub T.</div></div></td>
       </tr>
 
       <tr>
         <td>Czy posiada ekran</td>
-        <td><input type="text" th:field="*{czy_ekran}"></td>
+        <td><input type="text" th:field="*{czy_ekran}"><div class="row"><div class="offset-lg-1">Proszę wpisać true lub false.</div></td>
       </tr>
       <tr>
         <td>Numer zarządu </td>
@@ -82,8 +82,7 @@
       </tr>
 
       <tr>
-        <td colspan="2" align="center"><button type="submit">Zapisz</button></td>
-
+        <td colspan="2" align="center"><button type="submit" onclick="successfullyAdded()">Zapisz</button><a class="btn btn-outline-brand ms-sm-2" th:href="@{/stops_list}">Anuluj</a></td>
       </tr>
     </table>
   </form>

@@ -63,7 +63,8 @@
             </tr>
             <tr>
                 <td>Płeć:</td>
-                <td><input type="text" th:field="*{Plec_klienta}"> </td>
+                <td><input type="text" th:field="*{Plec_klienta}"> <div class="row"><div class="offset-lg-1">Proszę wpisać K lub M.</div></div></td>
+
             </tr>
 
             <tr>
@@ -86,7 +87,7 @@
             </tr>
             <tr>
                 <td>Numer zarzadu</td>
-                <td><input type="text" th:field="*{Nr_zarzadu}"></td>
+                <td><input type="text" th:field="*{Nr_zarzadu}" readonly="readonly"></td>
             </tr>
             <tr>
                 <td>Numer adresu :</td>
@@ -98,7 +99,7 @@
             </tr>
 
             <tr>
-                <td colspan="2" align="center"><button type="submit">Zapisz</button></td>
+                <td colspan="2" align="center"><button type="submit" onclick="successfullyEdited()">Zapisz</button><a class="btn btn-outline-brand ms-sm-2" th:href="@{/main_user/{Nr_klienta}}">Anuluj</a></td>
             </tr>
         </table>
     </form>

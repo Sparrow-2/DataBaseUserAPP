@@ -38,7 +38,11 @@
                     <a class="nav-link" th:inline="text" style="color:lightskyblue;">Jesteś zalogowany jako <b
                             style="text-transform:capitalize">[[${#httpServletRequest.remoteUser}]]</b></a>
                 </li>
+                <form method="post" th:action="@{/index}">
 
+                    <button class="btn btn-primary" type="submit" onclick="successfullyLogout()" value="Sign Out">Wyloguj się
+                    </button>
+                </form>
             </ul>
         </div>
     </div>
@@ -48,8 +52,8 @@
     <div class="row">
         <div class="col-md-10 mt-5">
 
-            <label style="font-size:30px">Wybierz interesującą Ciebie informacje</label>
-            <div style="font-size:20px">Wybierz interesującą Ciebie informację
+            <label style="font-size:30px">Wybierz interesującą Cię informację.</label>
+            <div style="font-size:20px">
             </div>
 
         </div>
@@ -58,7 +62,7 @@
 <br>
 <div class="container">
     <a th:href="@{'/stop_list'}">
-        <button class="btn btn-outline-">Przystanek </button>
+        <button class="btn btn-outline-">Przystanki</button>
     </a>
 </div>
 <br>

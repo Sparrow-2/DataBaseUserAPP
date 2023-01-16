@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
   <meta charset="UTF-8">
-  <title>Środki transportu</title>
+  <title>Lista przystankó</title>
 
   <link th:rel="stylesheet" th:href="@{/webjars/bootstrap/4.0.0-2/css/bootstrap.min.css} "/>
 
@@ -37,7 +37,11 @@
           <a class="nav-link" th:inline="text" style="color:lightskyblue;">Jesteś zalogowany jako <b
                   style="text-transform:capitalize">[[${#httpServletRequest.remoteUser}]]</b></a>
         </li>
+        <form method="post" th:action="@{/index}">
 
+          <button class="btn btn-primary" type="submit" onclick="successfullyLogout()" value="Sign Out">Wyloguj się
+          </button>
+        </form>
       </ul>
     </div>
   </div>
@@ -47,8 +51,8 @@
   <div class="row">
     <div class="col-md-10 mt-5">
 
-      <label style="font-size:30px">Oto dostępne u nas przzystanki</label>
-      <div style="font-size:20px">Zobacz jakie mają atrybuty
+      <label style="font-size:30px">Oto dostępne u nas przystanki.</label>
+      <div style="font-size:20px">Zobacz jakie mają atrybuty.
       </div>
 
     </div>
