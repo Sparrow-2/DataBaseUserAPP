@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeLeaf.org">
 <head>
   <meta charset="UTF-8">
-  <title>Dodaj nowy przystanek</title>
+  <title>Dodaj nowego pracownika</title>
   <link th:rel="stylesheet" th:href="@{/webjars/bootstrap/4.0.0-2/css/bootstrap.min.css} "/>
 </head>
 <body>
@@ -26,11 +26,13 @@
         </li>
 
         <li class="nav-item active">
-          <a class="nav-link" th:href="@{/main_admin}">Main</a>
+          <a class="nav-link" href="#">Main
+            <span class="sr-only">(current)</span>
+          </a>
         </li>
 
         <li class="nav-item">
-          <a class="nav-link" th:inline="text" style="color:lightskyblue;">Jesteś zalogowany jako <b
+          <a class="nav-link" th:inline="text" style="color:lightskyblue;">Jesteś zalogowany jako<b
                   style="text-transform:capitalize">[[${#httpServletRequest.remoteUser}]]</b></a>
         </li>
 
@@ -40,48 +42,53 @@
 </nav>
 
 <div align="center">
-  <h1>Dodaj nowy przystanek</h1>
+  <h1>Kup nowy bilet</h1>
 
   <br/>
 
-  <form action="#" th:action="@{/savePrzystanek}" th:object="${przystanek}" method="post">
+  <form action="#" th:action="@{/save_ticket}" th:object="${bilety}" method="post">
     <table border="1" cellpadding="10">
       <tr>
-        <td>Numer przystanku</td>
-        <td><input type="text" th:field="*{nr_przystanku}" ></td>
+        <td>Numer biletu</td>
+        <td><input type="text" th:field="*{Nr_biletu}"></td>
       </tr>
+
+
       <tr>
-        <td>Nazwa:</td>
-        <td><input type="text" th:field="*{nazwa_przystanku}"></td>
+        <td>Rodzaj biletu:</td>
+        <td><input type="text" th:field="*{Rodzaj_biletu}"></td>
+      </tr>
+
+
+
+      <tr>
+        <td>Czy ulgowy:</td>
+        <td><input type="text" th:field="*{Czy_ulgowy}"></td>
       </tr>
 
       <tr>
-        <td>Czy posiada biletomat</td>
-        <td><input type="text" th:field="*{czy_biletomat}"><div class="row"><div class="offset-lg-1">Proszę wpisać true lub false.</div></div></td>
+        <td>Cena :</td>
+        <td><input type="text" th:field="*{Cena}"></td>
       </tr>
 
       <tr>
-        <td>Czy posiada wiatę</td>
-        <td><input type="text" th:field="*{czy_wiata}"><div class="row"><div class="offset-lg-1">Proszę wpisać true lub false.</div></div></td>
+        <td>Numer zarządu</td>
+        <td><input type="text" th:field="*{Nr_zarzadu}"></td>
       </tr>
 
       <tr>
-        <td>Rodzaj przystanku:</td>
-        <td><input type="text" th:field="*{rodzaj_przystanku}"><div class="row"><div class="offset-lg-1">Proszę wpisać A lub T.</div></div></td>
+        <td>Numer klienta</td>
+        <td><input type="text" th:field="*{Nr_klienta}"></td>
       </tr>
 
-      <tr>
-        <td>Czy posiada ekran</td>
-        <td><input type="text" th:field="*{czy_ekran}"><div class="row"><div class="offset-lg-1">Proszę wpisać true lub false.</div></td>
-      </tr>
-      <tr>
-        <td>Numer zarządu </td>
-        <td><input type="text" th:field="*{nr_zarzadu}"></td>
-      </tr>
+
+
+
 
       <tr>
-        <td colspan="2" align="center"><button type="submit" onclick="successfullyAdded()">Zapisz</button><a class="btn btn-outline-brand ms-sm-2" th:href="@{/stops_list}">Anuluj</a></td>
+        <td colspan="2" align="center"><button type="submit">Zapisz</button></td>
       </tr>
+
     </table>
   </form>
 </div>
