@@ -294,7 +294,7 @@ public class AppController {
             return "redirect:/routes_list";
         }
 
-      @RequestMapping(value={"/routes_management"})
+      @RequestMapping(value={"/routes_stops"})
         public String showRoutesManagementPage(Model model) { return "admin/routes_stops"; }
 //
        @RequestMapping(value={"/stops_list"})
