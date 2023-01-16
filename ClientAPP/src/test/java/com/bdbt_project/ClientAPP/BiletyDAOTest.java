@@ -70,6 +70,6 @@ public class BiletyDAOTest {
     @Test
     void testDelete() {
 
-        dao.delete(10);
+        dao.delete(8);
     }
 }

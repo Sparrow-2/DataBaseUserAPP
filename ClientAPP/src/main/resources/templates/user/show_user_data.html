@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Zobacz swoje dane </title>
+
+    <link th:rel="stylesheet" th:href="@{/webjars/bootstrap/4.0.0-2/css/bootstrap.min.css} "/>
+
+</head>
+<body>
+<style type="text/css">body, a, a:hover {cursor: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAAAXNSR0IArs4c6QAAAwpJREFUeF5jZBjhgHGE+59hNABGU8AID4HRLDDCE8BoITiaBUazwAgPgdEsMMITwGgtMJoFRrPACA+B0SxAbAKo3eT8H6T2/38wRTXQ4r+PpEio2eiE1QFMjExgNzX57SHJPKIVj4gA+P/////aTc5YY1deSolqsT6QBnGzCYGtj9LvAkc+SgoY8QEAChGXqBSiMrmAiNhARiTJdrvHvkLRk2o6BzMFjAYAAwMD08zHeFOA9Yl+cEgetSjEGgtqMpA8hg50draCha64V5MUe5Tqg1lGdAoYsQHQfAwS8/WX8UcQoRSArluYjxMsZH+8b3CngBEfAISSPixmSU0BMH1OBxvBzH329WAaV1lB7bKD6DJgNAAIlP6wGCSpCCdDMbXbF8wskErNJfI1imsw2gGEUsCIDQC5l+fBIadyYxMZ8Um+FgFhUYhmRqL7a1gtQ6//YYqITgEjJgBk6tejtAAl3lwHB5bA+3tg2iIcQsPAp5fCYCaf+Fvyo5kEnYzQfhvLD02wLimlHyToRij1qt8C5khve4HaFxjxAXD/8VNwCph5Ih4cQrDSk5EJkjBOroKMB/ALQ3qBvs62YPrMZUhKef7qDZjWcD5BVszg0nT7mCRY6u93eTDt72IPpjfuOYiiBVdeRzeX9ftvsFCC3ULUFDDiA+D12/fgqJ54JBhrZJxYCUkB3p6eYFpBCnU8YPcRSMwL6O4E00zM/6iSEgjZC7Nk6cbtKCmQ0AgWRi0w0gIgxWQ2OMDglSyu0VZYCKPHBEwclhLevv8IFrr1azqYZuP+TpMUgG4vrhSAbnmqzUSwkLywLkrDYjQAiI0m2FghrAxA13f09Fmw0JpJbZQ13dAMJtbextwUsE5tVSWS7CdaMbEOGbYBAIsYXKPGe5ZBRllpBXDZq6oIaR9Mb60ly36SNY34AKBVDA+UuSSngIFyKK3sHQ0AWoXsUDF3NAUMlZiilTtHUwCtQnaomDuaAoZKTNHKnaMpgFYhO1TMHU0BQyWmaOXO0RRAq5AdKuaOpoChElO0cicAZtqGTK8+uksAAAAASUVORK5CYII=) 4 22, default;}</style>
+
+<script data-style="modern" data-speed="2000" data-position="rm" data-size="78" data-arrowtype="ar2" data-bgcolor="rgb(115,198,42)" src="http://profilki.pl/scr/uparrow.js"></script>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+    <div class="container">
+        <a class="navbar-brand" href="/">ZTM Warszawa</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                aria-controls="navbarResponsive"
+                aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/index}">Home</a>
+                </li>
+
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Main
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" th:inline="text" style="color:lightskyblue;">Jesteś zalogowany jako <b
+                            style="text-transform:capitalize">[[${#httpServletRequest.remoteUser}]]</b></a>
+                </li>
+                <form method="post" th:action="@{/index}">
+
+                    <button class="btn btn-primary" type="submit" onclick="successfullyLogout()" value="Sign Out">Wyloguj się
+                    </button>
+                </form>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-10 mt-5">
+
+            <label style="font-size:30px">Podgląd danych</label>
+            <div style="font-size:20px">Podgląd swoich danych
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="col-md-10 mt-5">
+
+        <form action="#"  th:object="${klient}" method="post">
+            <table border="1" cellpadding="10">
+                <tr>
+                    <td>Numer klienta </td>
+                    <td><input type="text" th:field="*{Nr_klienta}" readonly="readonly"></td>
+                </tr>
+                <tr>
+                    <td>Imię:</td>
+                    <td><input type="text" th:field="*{Imie_klienta}" readonly="readonly"></td>
+                </tr>
+
+                <tr>
+                    <td>Nazwisko:</td>
+                    <td><input type="text" th:field="*{Nazwisko_klienta}" readonly="readonly" ></td>
+                </tr>
+                <tr>
+                    <td>Płeć:</td>
+                    <td><input type="text" th:field="*{Plec_klienta}" readonly="readonly"</td>
+
+                </tr>
+
+                <tr>
+                    <td>PESEL:</td>
+                    <td><input type="text" th:field="*{PESEL_klienta}" readonly="readonly"></td>
+                </tr>
+
+                <tr>
+                    <td>E-mail:</td>
+                    <td><input type="text" th:field="*{Email_klienta}" readonly="readonly" ></td>
+                </tr>
+                <tr>
+                    <td>Data urodzenia : </td>
+                    <td><input type="text" th:field="*{Data_urodzenia_klienta}" readonly="readonly"></td>
+                </tr>
+
+                <tr>
+                    <td>Telefon:</td>
+                    <td><input type="text" th:field="*{Nr_telefonu_klienta}" readonly="readonly"></td>
+                </tr>
+                <tr>
+                    <td>Numer zarzadu</td>
+                    <td><input type="text" th:field="*{Nr_zarzadu}" readonly="readonly"></td>
+                </tr>
+                <tr>
+                    <td>Numer adresu :</td>
+                    <td><input type="text" th:field="*{Nr_adresu}" readonly="readonly"></td>
+                </tr>
+                <tr>
+                    <td>Numer poczty </td>
+                    <td><input type="text" th:field="*{Nr_poczty}" readonly="readonly"></td>
+                </tr>
+
+            </table>
+        </form>
+        <br>
+        <div class="container">
+            <a th:object="${klient}" th:href="@{'/edit_user_data/' + 3}">
+                <button class="btn btn-outline-">Edytuj swoje dane</button>
+            </a>
+        </div>
+    </div>
+
+    </div>
+</div>
+
+</body>
+</html>

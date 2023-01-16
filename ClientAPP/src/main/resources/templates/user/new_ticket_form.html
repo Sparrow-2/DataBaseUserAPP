@@ -68,15 +68,23 @@
         <td>Cena :</td>
         <td><input type="text" th:field="*{Cena}"></td>
       </tr>
+      <tr>
+        <td>Cena :</td>
+        <td><input type="text" th:field="*{Czas_skasowania}"></td>
+      </tr>
+      <tr>
+        <td>Cena :</td>
+        <td><input type="text" th:field="*{Koniec_waznosci}"></td>
+      </tr>
 
       <tr>
         <td>Numer zarządu</td>
-        <td><input type="text" th:field="*{Nr_zarzadu}"></td>
+        <td><input type="text" th:field="*{Nr_zarzadu}" readonly="readonly"></td>
       </tr>
 
       <tr>
         <td>Numer klienta</td>
-        <td><input type="text" th:field="*{Nr_klienta}"></td>
+        <td><input type="text" th:hidden="*{Nr_klienta}" th:value ="3" readonly="readonly"></td>
       </tr>
 
 

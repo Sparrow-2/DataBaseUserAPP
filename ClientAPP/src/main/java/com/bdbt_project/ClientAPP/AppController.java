@@ -13,6 +13,11 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 import javax.servlet.http.HttpServletRequest;
 import java.lang.reflect.Array;
+import java.sql.Time;
+import java.sql.Timestamp;
+import java.time.Instant;
+import java.time.temporal.ChronoUnit;
+import java.util.Date;
 import java.util.List;
 
 @Configuration
@@ -111,11 +116,12 @@ public class AppController {
             return mav;
         }
 
-        @RequestMapping(value = {"/emp_management"})
+
+        @RequestMapping(value = {"/employees_list"})
         public String showEmpManagementPage(Model model) {
             List<Pracownicy> listPracownicy = daoPracownicy.list();
             model.addAttribute("listPracownicy", listPracownicy);
-            return "admin/emp_management";
+            return "admin/employees_list";
         }
 
 
@@ -123,19 +129,19 @@ public class AppController {
         public String showNewEmpPage(Model model) {
             Pracownicy pracownicy = new Pracownicy();
             model.addAttribute("pracownicy", pracownicy);
-            return "admin/new_form";
+            return "admin/new_employee_form";
         }
 
         @RequestMapping(value = "/save", method = RequestMethod.POST)
         public String saveEmp(@ModelAttribute("pracownicy") Pracownicy pracownicy) {
             daoPracownicy.save(pracownicy);
 
-            return "redirect:/emp_management";
+            return "redirect:/employees_list";
         }
 
         @RequestMapping("/edit/{Nr_pracownika}")
         public ModelAndView showEditEmpPage(@PathVariable(name = "Nr_pracownika") int nr_pracownika) {
-            ModelAndView mav = new ModelAndView("admin/edit_form");
+            ModelAndView mav = new ModelAndView("admin/edit_employee_form");
             Pracownicy pracownicy = daoPracownicy.get(nr_pracownika);
             mav.addObject("pracownicy", pracownicy);
 
@@ -146,7 +152,7 @@ public class AppController {
         public String updateEmp(@ModelAttribute("pracownik") Pracownicy pracownicy) {
             daoPracownicy.update(pracownicy);
 
-            return "redirect:/emp_management";
+            return "redirect:/employees_list";
         }
 
         @RequestMapping(value = "/new_stop")
@@ -166,13 +172,8 @@ public class AppController {
             return "admin/new_route_form";
         }
 
-        @RequestMapping(value = "/new_stop_on_route")
-        public String showNewStopOnRouteForm(Model model) {
-            Kolejnosci kolejnosci = new Kolejnosci();
-            model.addAttribute("przystankiNaLinii", kolejnosci);
 
-            return "admin/new_stop_on_route_form";
-        }
+
 
 
         @RequestMapping(value = "/choose_route_or_stop")
@@ -194,6 +195,16 @@ public class AppController {
        return "redirect:/routes_list";
    }
 
+        @RequestMapping("/show_user_data/{Nr_klienta}")
+
+        public ModelAndView showUserDataPage(@PathVariable(name = "Nr_klienta") int Nr_klienta) {
+            ModelAndView mav = new ModelAndView("user/show_user_data");
+
+            Klient klient = daoKlient.get(Nr_klienta);
+            mav.addObject("klient", klient);
+
+            return mav;
+        }
 
 
         @RequestMapping("/edit_user_data/{Nr_klienta}")
@@ -284,7 +295,7 @@ public class AppController {
         }
 
       @RequestMapping(value={"/routes_management"})
-        public String showRoutesManagementPage(Model model) { return "admin/routes_management"; }
+        public String showRoutesManagementPage(Model model) { return "admin/routes_stops"; }
 //
        @RequestMapping(value={"/stops_list"})
      public String showStopsListPage(Model model) {
@@ -318,6 +329,21 @@ public class AppController {
 
         @RequestMapping(value = {"/save_ticket"}, method = RequestMethod.POST)
         public String saveTic(@ModelAttribute("bilety") Bilety bilety) {
+            bilety.setNr_klienta(3);
+            bilety.setNr_zarzadu(1);
+
+            bilety.setRodzaj_biletu("KWARTALNY");
+            bilety.setCzy_ulgowy(false);
+            Instant instant = Instant.now();
+            Date date = new Date();
+
+
+
+
+
+            bilety.setCena(200);
+
+
             daoBilety.save(bilety);
             return "redirect:/my_tickets";
         }
