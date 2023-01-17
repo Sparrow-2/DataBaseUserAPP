@@ -276,9 +276,19 @@ public class AppController {
   public String updateUserData(@ModelAttribute("klient") Klient klient) {
          daoKlient.update(klient);
 
-    return "redirect:/show_user_data/3";
+         return "redirect:/show_user_data/3";
        }
 
+       @RequestMapping("/powrot")
+
+       public String backToMain(Model model){
+           return "redirect:/main_user/" + '3';
+       }
+
+       @RequestMapping("/powrot2")
+       public String backToUserData(Model model){
+            return "redirect:/show_user_data/3";
+       }
         @RequestMapping("/delete/{Nr_pracownika}")
         public String deleteEmp(@PathVariable(name = "Nr_pracownika") int Nr_pracownika) {
             daoPracownicy.delete(Nr_pracownika);
@@ -343,12 +353,6 @@ public class AppController {
 
             bilety.setRodzaj_biletu("KWARTALNY");
             bilety.setCzy_ulgowy(false);
-
-
-
-
-
-
 
             bilety.setCena(200);
 
