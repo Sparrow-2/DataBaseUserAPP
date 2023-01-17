@@ -26,7 +26,9 @@
                 </li>
 
                 <li class="nav-item active">
-                    <a class="nav-link" th:href="@{/main_user/{Nr_klienta}}">Main</a>
+                    <a class="nav-link" href="#">Main
+                        <span class="sr-only">(current)</span>
+                    </a>
                 </li>
 
                 <li class="nav-item">
@@ -97,7 +99,7 @@
             </tr>
 
             <tr>
-                <td colspan="2" align="center"><button type="submit" onclick="successfullyEdited()">Zapisz</button><a class="btn btn-outline-brand ms-sm-2" th:href="@{/main_user/3}">Anuluj</a></td>
+                <td colspan="2" align="center"><button type="submit" onclick="successfullyEdited()">Zapisz</button></td>
             </tr>
         </table>
     </form>
