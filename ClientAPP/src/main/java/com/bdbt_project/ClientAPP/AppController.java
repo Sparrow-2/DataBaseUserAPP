@@ -188,6 +188,7 @@ public class AppController {
             return "redirect:/stops_list";
         }
 
+
                @RequestMapping(value="/save_linia", method = RequestMethod.POST)
    public String saveLinia(@ModelAttribute("trasy") Trasy trasy) {
          daoTrasy.save(trasy);
@@ -282,17 +283,24 @@ public class AppController {
         public String deleteEmp(@PathVariable(name = "Nr_pracownika") int Nr_pracownika) {
             daoPracownicy.delete(Nr_pracownika);
 
-            return "redirect:/emp_management";
+            return "redirect:/employees_list";
         }
 
 
 
-        @RequestMapping("/delete_route/{idLinii}")
-        public String deleteRoute(@PathVariable(name = "idLinii") int id) {
-            daoTrasy.delete(id);
+        @RequestMapping("/delete_route/{Nr_trasy}")
+        public String deleteRoute(@PathVariable(name = "Nr_trasy") int Nr_trasy) {
+            daoTrasy.delete(Nr_trasy);
 
             return "redirect:/routes_list";
         }
+        @RequestMapping("/delete_stop/{nr_przysanku}")
+        public String deleteStop(@PathVariable(name = "nr_przystanku") int nr_przystanku) {
+            daoTrasy.delete(nr_przystanku);
+
+            return "redirect:/stops_list";
+        }
+
 
       @RequestMapping(value={"/routes_stops"})
         public String showRoutesManagementPage(Model model) { return "admin/routes_stops"; }
@@ -304,6 +312,7 @@ public class AppController {
 
             return "admin/stops_list";
         }
+
 
       @RequestMapping(value={"/routes_list"})
      public String showRoutesListPage(Model model) {
